@@ -1,0 +1,47 @@
+package td9;
+
+import java.lang.Class;
+import java.lang.reflect.Constructor;
+
+
+/*
+public class FabriquePersonnages 
+{
+		public Personnage create(String n)
+		{
+			if(n.equals("PersonneBonus"))
+			{
+				return new PersonnageBonus();
+			}
+			else if(n.equals("PersonneInvisible"))
+			{
+				return new PersonnageInvisible();
+			}else {return null;}
+
+		}
+}
+*/
+	//avec introspection
+
+public class FabriquePersonnages
+	{
+		public static Personnage create(String n)
+		{
+			Class c;
+			try {
+				c = Class.forName(n);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Personnage p = (Personnage) c.newInstance();
+			/* ou 
+			 *  
+			 * Constructor cons = c.getConstructor(); 
+			 *  Personnage p = (Personnage)const.newInstance();
+			 */
+
+			return p;
+		}
+}
+

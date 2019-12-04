@@ -1,0 +1,6 @@
+2 Outils : dot(graphiz) ou langage PostScript
+*TP5 et TP1 : dot 
+	ouverture d'un fichier dot en écriture lor de l'éxécution puis 
+		éxécueter la commande : dot -Tps filename.dot -o outfile.ps 
+
+*TP2 et TP3 et TP4 : postScript

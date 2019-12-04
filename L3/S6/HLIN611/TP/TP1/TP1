@@ -1,0 +1,14 @@
+								01/02/2018
+HMIN611
+TP1 Mesure de Performance/Qos Réseaux, correspondances des adresses
+
+1-Caractéristiques du réseau RENATER
+*débit théorique 
+*résaue de l'université (test sur http://www.ariase.com/fr/vitesse/resultat-test-vitesse.html)
+Le débit descendant (reception) : 	510,44 Mbit/s
+Le débit ascendant (envoi) :		288,12 Mbit/s
+*obtenir le nom de domaine : hostname -A(cmd linux)
+*obtenir @ IP de la machine courante : ifconfig
+	   
+
+

@@ -1,0 +1,174 @@
+#include <iostream>
+#include <cstdlib>
+#include <exception>
+#include "population-vivante.h"
+using namespace std; 
+
+#define CHECK_BOUND(i,j)						\
+  if (i>=N || j>=N){							\
+    std::cout<<"Accessing a Cell at ("<<i<<","<<j<<") out of range ... aborting"<<std::endl; \
+    std::terminate();							\
+  }									\
+
+const Cellule* PopulationVivante::at(size_t i, size_t j) const {
+  for (size_t k = 0 ; k < alive ; k++) {
+    if ((T.at(k).getX() == i) && (T.at(k).getY() == j)) {
+      return T.size()+k;
+    }
+  }
+  return NULL;
+}
+
+_data* PopulationVivante::at(size_t i, size_t j)  {
+  for (size_t k = 0 ; k < alive ; k++) {
+    if ((T._data[k].getX() == i) && (T._data[k].getY() == j)) {
+      return T._data+k;
+    }
+  }
+  return NULL;
+}
+
+size_t PopulationVivante::nb_voisins_vivants(size_t ci, size_t cj) const {
+  size_t cpt=0;
+  size_t imin,imax,jmin,jmax;
+  imin = ci==0?ci:ci-1;
+  imax = ci==(N-1)?ci:ci+1;
+  jmin = cj==0?cj:cj-1;
+  jmax = cj==(N-1)?cj:cj+1;
+  
+  for (size_t i = imin ; i <= imax ; i++) {
+    for (size_t j = jmin ; j <= jmax ; j++) {
+      if (at(i,j) != NULL) {
+	cpt++;
+      }
+    }
+  }
+  return cpt - (at(ci,cj) != NULL ? 1 : 0);
+}
+
+void PopulationVivante::updateColors() {
+  //calcule les cellules vivantes qui vont mourir  
+  for (size_t i = 0; i < alive; i++) {
+    size_t voisin=nb_voisins_vivants(T._data[i].getX(), T._data[i].getY());
+    if ((voisin != 2) && (voisin != 3)) T._data[i].doitMourir();  
+  }
+}
+
+
+PopulationVivante::PopulationVivante(size_t n) : alive(0), N(n) {
+  if (N*N > NMAX) {
+    std::cout<<"ATTENTION: Tableau de taille insuffisante dans PopulationVivante"<<std::endl;
+  }
+}
+
+
+void PopulationVivante::init(size_t n) {
+  srand(time(NULL));
+  if (nb_vivants() == 0) {
+    size_t i,j;
+    for (size_t k = 0 ; k < n ; k++) {
+      do {
+	i=rand()% N;
+	j=rand()% N;
+      } while (at(i,j) != NULL);
+      T._data[k]=_data(true,i,j);
+      alive++;
+    }
+    updateColors();
+  }
+}
+size_t PopulationVivante::nb_cellules(_data::Couleur c) const {
+  size_t cpt=0;
+  for (size_t i = 0 ; i < alive ; i++) {
+      if (_dataEstDeLaCouleur(T._data[i],c)) {
+	cpt++;
+      }    
+  }
+  return cpt;
+}
+
+size_t PopulationVivante::nb_vivants()    const { return N*N-nb_morts();}
+size_t PopulationVivante::nb_deces()     const { return nb_cellules(_data::ROUGE)+nb_cellules(_data::JAUNE);}
+size_t PopulationVivante::nb_morts()      const { return nb_cellules(_data::NOIR);}
+size_t PopulationVivante::nb_naissances() const { return nb_cellules(_data::BLEU);}
+
+
+_data PopulationVivante::get_dataCopie(size_t i, size_t j) const {
+  CHECK_BOUND(i,j);
+  const _data* ptr=at(i,j);
+  if (ptr==NULL) {
+    return _data(false,i,j);
+  } else {
+    return *ptr;
+  }
+}
+
+void PopulationVivante::printCell(size_t i, size_t j) const {
+  CHECK_BOUND(i,j);
+  get_dataCopie(i,j).print();
+}   
+
+void PopulationVivante::kill(size_t i, size_t j) {
+  CHECK_BOUND(i,j);
+  const _data* ptr=at(i,j);
+  if (ptr!=NULL) {
+    size_t k=ptr-T._data; // retrouve la position dans le tableau
+    for ( ; k < alive - 1 ; k++) {
+      T._data[k]=T._data[k+1];
+    }
+    alive--;
+  }
+}
+
+void PopulationVivante::birth(size_t i, size_t j) {
+  if (alive+1<NMAX){
+    CHECK_BOUND(i,j);
+    _data* ptr=at(i,j);
+    if (ptr==NULL) {
+      T._data[alive]=_data(true,i,j);    
+      alive++;
+    }
+    else{
+      ptr->setVivante(true);
+    }
+  }
+  else {
+    std::cerr<<"PopulationVivante: Erreur -> trop de cellule vivante pour NMAX="<<NMAX<<std::endl;
+    std::cerr<<"aborting...\n";
+    std::terminate();
+  }
+}
+
+void PopulationVivante::print() const {
+  for (size_t i = 0; i < N + 2 ; i++) {
+    cout << "X";
+  }
+  cout<<endl;
+  for (size_t i = 0 ; i < N ; i++) {
+    cout<<"X";
+    for (size_t j = 0 ; j < N ; j++) {
+      cout<<Couleur2String(get_Copie(i,j).getCouleur());
+    }
+    cout<<"X"<<endl;
+  }
+  for (size_t i = 0 ; i < N + 2 ; i++) {
+    cout<<"X";
+  }
+  cout<<endl;
+}
+
+PopulationVivante PopulationVivante::next() const {
+  PopulationVivante POP(*this);
+  for (size_t i = 0 ; i < N ; i++) {
+    for (size_t j = 0 ; j < N ; j++) {
+      size_t voisin=nb_voisins_vivants(i,j);
+      if ((voisin == 3) || ((voisin == 2) && (at(i,j) != NULL))) {
+	POP.birth(i,j);
+      } else {
+	POP.kill(i,j);
+      }
+    }
+  }
+  POP.updateColors();
+  return POP;
+}

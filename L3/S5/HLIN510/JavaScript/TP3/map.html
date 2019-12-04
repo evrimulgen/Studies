@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!-- googleAPI key = "  AIzaSyC-OzsG6Hqo8F9trZe-cuWrJiM2n3f5Grk  " --> 
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		html { height: 100% }
+		body { height: 100%; margin: 0px; padding: 0px; }
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css" />
+		<script type="text/javascript">
+		function initMap() 
+		{	
+			var markers=[];
+			
+			
+			$.getJSON("th.json",function(data){
+				$.each(data,function(entryIndex, entry){
+						var html = "<h3"+" id='"+entry['nom']+"'> "+entry['nom']+" </h3>";
+						$('#accordion').append(html);
+						$.getJSON(entry['lien'],function(data2)
+							{ $.each(data2,function(entryIndex2,entry2)
+								{	
+									var lpi = "</br><input type='checkbox' name='"+entry2['name']+"' value='"+entry2['name']+"'/>"+entry2['name']+"<br />";
+									console.log(lpi);
+									$('#'+entry['nom']).append(lpi);
+									var latlng = new google.maps.LatLng(entry2['geometry']['coordinates'][1],entry2['geometry']['coordinates'][0]); 
+									var marker = new google.maps.Marker({ 
+																  position: latlng,
+																  map: map,
+																  title: entry2['name'] ,
+																  draggable: false
+																});
+									marker.setVisible(false);
+									var infowindow = new google.maps.InfoWindow({content: entry2['name']});
+									google.maps.event.addListener(marker, 'click', function(){
+									  infowindow.open(map,marker);
+									});
+									markers[entry2['name']]=marker;						
+							});
+						});
+					});	
+				//$('#accordion').accordion({collapsible : true,heightStyle: "content",active:false});
+	
+			});	
+	
+						
+			$('#accordion').on('change', 'input[type=checkbox]', function() 
+			{
+			   var valeur = $(this).val();
+			   console.log(valeur);// value du checkbox
+			   if ($(this).is(':checked'))
+			   {
+			   markers[valeur].setVisible(true);
+			   console.log(valeur); // hotel1 ou restaurant2
+			   } else 
+			   {
+			   markers[valeur].setVisible(false);
+			   }
+			});		
+		
+			var coord = new google.maps.LatLng(43.6111, 3.87667);
+			// préfecture de Montp
+			var myOptions = { 
+				  zoom: 15,
+				  center: coord,
+				  mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		}
+		</script>
+	</head>
+	<body>
+		<div id="accordion"></div>
+		<div id="map_canvas" style="width:100%; height:100%">
+				<script  async defer 
+				src="http://maps.google.com/maps/api/js?key=AIzaSyC-OzsG6Hqo8F9trZe-cuWrJiM2n3f5Grk&callback=initMap" ></script>
+		</div>
+	</body>
+</html>

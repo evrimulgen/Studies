@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1"
+    xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:uml="http://schema.omg.org/spec/UML/2.2" xsi:schemaLocation="http://schema.omg.org/spec/UML/2.2 http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_N-4FoG5sEemjOc2rNSdrHQ"
+    name="untitledModel">
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_N_Iu4G5tEemjOc2rNSdrHQ" name="Authentification">
+    <include xmi:type="uml:Include" xmi:id="_ATyDEG52EemjOc2rNSdrHQ" addition="_tT1SIG5zEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_GFZcYG52EemjOc2rNSdrHQ" addition="_Sw34MG5wEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_Ib7O4G52EemjOc2rNSdrHQ" addition="_Sw34MG5wEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_LnX3MG52EemjOc2rNSdrHQ" addition="_nL3OUG5zEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_RFuWQG52EemjOc2rNSdrHQ" addition="_Sw34MG5wEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_VSppsG52EemjOc2rNSdrHQ" addition="_nL3OUG5zEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_XEmIcG52EemjOc2rNSdrHQ" addition="_pvWewG5zEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+    <include xmi:type="uml:Include" xmi:id="_klL_oG52EemjOc2rNSdrHQ" addition="_Sw34MG5wEemjOc2rNSdrHQ"
+        includingCase="_N_Iu4G5tEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Sw34MG5wEemjOc2rNSdrHQ" name="Ajouter un utilsateur"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_wDfBMG5xEemjOc2rNSdrHQ" name="Etudiant">
+    <generalization xmi:type="uml:Generalization" xmi:id="_Duh9kG50EemjOc2rNSdrHQ" general="_wTmg0G5xEemjOc2rNSdrHQ"
+        specific="_wDfBMG5xEemjOc2rNSdrHQ"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_FM71QG50EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_wDfBMG5xEemjOc2rNSdrHQ"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_htYhgG51EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_wDfBMG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_wTmg0G5xEemjOc2rNSdrHQ" name="RepEntreprise">
+    <generalization xmi:type="uml:Generalization" xmi:id="_ax7LQG51EemjOc2rNSdrHQ" general="_w-PZQG5xEemjOc2rNSdrHQ"
+        specific="_wTmg0G5xEemjOc2rNSdrHQ"/>
+    <generalization xmi:type="uml:Generalization" xmi:id="_iRQqoG51EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_wTmg0G5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_wmLekG5xEemjOc2rNSdrHQ" name="Adminastrateur">
+    <generalization xmi:type="uml:Generalization" xmi:id="_98t6gG50EemjOc2rNSdrHQ" general="_0d86AG50EemjOc2rNSdrHQ"
+        specific="_wmLekG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_w-PZQG5xEemjOc2rNSdrHQ" name="Responsable">
+    <generalization xmi:type="uml:Generalization" xmi:id="_d59TMG51EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_w-PZQG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_4nTcYG5xEemjOc2rNSdrHQ" name="tuteur">
+    <generalization xmi:type="uml:Generalization" xmi:id="_eXarQG51EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_4nTcYG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_5JlDAG5xEemjOc2rNSdrHQ" name="Secrétaire">
+    <generalization xmi:type="uml:Generalization" xmi:id="_8tPPoG50EemjOc2rNSdrHQ" general="_0d86AG50EemjOc2rNSdrHQ"
+        specific="_5JlDAG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_5tyjUG5xEemjOc2rNSdrHQ" name="Authentification CAS">
+    <generalization xmi:type="uml:Generalization" xmi:id="_x-m0oG5yEemjOc2rNSdrHQ" general="_N_Iu4G5tEemjOc2rNSdrHQ"
+        specific="_5tyjUG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6PMnQG5xEemjOc2rNSdrHQ" name="Ajouter une entreprise">
+    <generalization xmi:type="uml:Generalization" xmi:id="_DpCPAG5zEemjOc2rNSdrHQ" general="_Sw34MG5wEemjOc2rNSdrHQ"
+        specific="_6PMnQG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6kBAsG5xEemjOc2rNSdrHQ" name="Authentification normal">
+    <generalization xmi:type="uml:Generalization" xmi:id="_yhwlAG5yEemjOc2rNSdrHQ" general="_N_Iu4G5tEemjOc2rNSdrHQ"
+        specific="_6kBAsG5xEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_8pqCEG5yEemjOc2rNSdrHQ" name="Ajouter un étudiant">
+    <generalization xmi:type="uml:Generalization" xmi:id="_EKRT0G5zEemjOc2rNSdrHQ" general="_Sw34MG5wEemjOc2rNSdrHQ"
+        specific="_8pqCEG5yEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_9a0ZQG5yEemjOc2rNSdrHQ" name="Ajouter">
+    <generalization xmi:type="uml:Generalization" xmi:id="_E1PjcG5zEemjOc2rNSdrHQ" general="_Sw34MG5wEemjOc2rNSdrHQ"
+        specific="_9a0ZQG5yEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_nL3OUG5zEemjOc2rNSdrHQ" name="Modifier un utilisateur"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_pvWewG5zEemjOc2rNSdrHQ" name="Supprimer un utilisateur"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_tT1SIG5zEemjOc2rNSdrHQ" name="Rechercher utilisateur">
+    <extend xmi:type="uml:Extend" xmi:id="_rXfEwG50EemjOc2rNSdrHQ" extendedCase="_u5iEoG5zEemjOc2rNSdrHQ"
+        extensionLocation="_rXdPkG50EemjOc2rNSdrHQ" extension="_tT1SIG5zEemjOc2rNSdrHQ"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ztAv0G51EemjOc2rNSdrHQ" useCase="_tT1SIG5zEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_u5iEoG5zEemjOc2rNSdrHQ" name="Consulter utilisateur">
+    <extend xmi:type="uml:Extend" xmi:id="_ztBW4G51EemjOc2rNSdrHQ" extendedCase="_tT1SIG5zEemjOc2rNSdrHQ"
+        extensionLocation="_ztAv0G51EemjOc2rNSdrHQ" extension="_u5iEoG5zEemjOc2rNSdrHQ"/>
+    <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_rXdPkG50EemjOc2rNSdrHQ" useCase="_u5iEoG5zEemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_1S9r4G5zEemjOc2rNSdrHQ" name="Utilisateur"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_lT_RQG50EemjOc2rNSdrHQ"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_0d86AG50EemjOc2rNSdrHQ" name="superAdminastrateur">
+    <generalization xmi:type="uml:Generalization" xmi:id="_OGo5gG53EemjOc2rNSdrHQ" general="_1S9r4G5zEemjOc2rNSdrHQ"
+        specific="_0d86AG50EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_K0znQG51EemjOc2rNSdrHQ" memberEnd="_K0znQW51EemjOc2rNSdrHQ _K0znQm51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_K0znQW51EemjOc2rNSdrHQ" type="_0d86AG50EemjOc2rNSdrHQ"
+        owningAssociation="_K0znQG51EemjOc2rNSdrHQ" association="_K0znQG51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_K0znQm51EemjOc2rNSdrHQ" type="_Sw34MG5wEemjOc2rNSdrHQ"
+        owningAssociation="_K0znQG51EemjOc2rNSdrHQ" association="_K0znQG51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_M-X70G51EemjOc2rNSdrHQ" memberEnd="_M-X70W51EemjOc2rNSdrHQ _M-X70m51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_M-X70W51EemjOc2rNSdrHQ" type="_0d86AG50EemjOc2rNSdrHQ"
+        owningAssociation="_M-X70G51EemjOc2rNSdrHQ" association="_M-X70G51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_M-X70m51EemjOc2rNSdrHQ" type="_nL3OUG5zEemjOc2rNSdrHQ"
+        owningAssociation="_M-X70G51EemjOc2rNSdrHQ" association="_M-X70G51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PQYasG51EemjOc2rNSdrHQ" memberEnd="_PQYasW51EemjOc2rNSdrHQ _PQYasm51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQYasW51EemjOc2rNSdrHQ" type="_0d86AG50EemjOc2rNSdrHQ"
+        owningAssociation="_PQYasG51EemjOc2rNSdrHQ" association="_PQYasG51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_PQYasm51EemjOc2rNSdrHQ" type="_pvWewG5zEemjOc2rNSdrHQ"
+        owningAssociation="_PQYasG51EemjOc2rNSdrHQ" association="_PQYasG51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Uzon4G51EemjOc2rNSdrHQ" memberEnd="_Uzon4W51EemjOc2rNSdrHQ _Uzon4m51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Uzon4W51EemjOc2rNSdrHQ" type="_0d86AG50EemjOc2rNSdrHQ"
+        owningAssociation="_Uzon4G51EemjOc2rNSdrHQ" association="_Uzon4G51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Uzon4m51EemjOc2rNSdrHQ" type="_tT1SIG5zEemjOc2rNSdrHQ"
+        owningAssociation="_Uzon4G51EemjOc2rNSdrHQ" association="_Uzon4G51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mz69gG51EemjOc2rNSdrHQ" memberEnd="_mz69gW51EemjOc2rNSdrHQ _mz69gm51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mz69gW51EemjOc2rNSdrHQ" type="_1S9r4G5zEemjOc2rNSdrHQ"
+        owningAssociation="_mz69gG51EemjOc2rNSdrHQ" association="_mz69gG51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_mz69gm51EemjOc2rNSdrHQ" type="_N_Iu4G5tEemjOc2rNSdrHQ"
+        owningAssociation="_mz69gG51EemjOc2rNSdrHQ" association="_mz69gG51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-utisG51EemjOc2rNSdrHQ" memberEnd="_-utisW51EemjOc2rNSdrHQ _-utism51EemjOc2rNSdrHQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-utisW51EemjOc2rNSdrHQ" type="_pvWewG5zEemjOc2rNSdrHQ"
+        owningAssociation="_-utisG51EemjOc2rNSdrHQ" association="_-utisG51EemjOc2rNSdrHQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_-utism51EemjOc2rNSdrHQ" type="_N_Iu4G5tEemjOc2rNSdrHQ"
+        owningAssociation="_-utisG51EemjOc2rNSdrHQ" association="_-utisG51EemjOc2rNSdrHQ"/>
+  </packagedElement>
+</uml:Model>

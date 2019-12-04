@@ -1,0 +1,145 @@
+% contient l'en-tête et les frames communes au diaporama et au polycopié
+
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}     % utf8
+\usepackage{verbatim}           %pour \verbatiminput{fich}
+\usetheme[secheader]{Madrid}    % titre en haut
+\useoutertheme{infolines}       %ligne d'en-tête et de pied de page
+
+\graphicspath{{Figures/}}
+\setbeamertemplate{caption}[numbered] % pour numéroter tables et figures !
+%si \verb   : \begin{frame}[fragile]
+%si verbatim  : \begin{frame}[containsverbatim]
+
+
+\title{\LaTeX{}}
+\author{Michel Meynard }
+\institute{UM2}
+\date{Univ. Montpellier 2}
+
+\begin{document}
+% Premier transparent de titre
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% 2eme transparent TDM générale
+\begin{frame}
+  \frametitle{Table des matières}
+  {\small \tableofcontents[hideallsubsections]}
+\end{frame}
+
+
+\section{Introduction}
+
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+\item système de composition de documents créé par Leslie Lamport
+\item collection de macro-commandes destinées au processeur de texte \TeX{} de
+  Donald Knuth (boîtes)
+\item \LaTeX{} : abréviation de Lamport TeX
+\item Dernière version majeure \LaTeX2e{} en attendant \LaTeX3{}
+\item NON WYSIWYG (What You See Is What You Get) :
+  \begin{itemize}
+  \item le rédacteur décrit la structure \textbf{logique} du document
+  \item \LaTeX{} met en page la structure physique
+  \end{itemize}
+\item de nombreux types de document (documentclass) : articles, livres,
+  présentations, rapports, lettres, étiquettes, pochettes de disque compact,
+  posters, cartes de visite \ldots
+\item succès de \LaTeX{} :
+  \begin{itemize}
+  \item articles, thèses scientifiques (mode mathématique)
+  \item moins de perte de temps pour la mise en page
+  \item uniformité des documents produits
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\section{Exemple}
+
+\begin{frame}[fragile]
+\frametitle{Exemple - 1}
+\begin{enumerate}
+\item Editer le texte suivant et le sauver dans \texttt{exemple1.tex}
+\small{
+\verbatiminput{Figures/exemple1.tex}
+}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Exemple - 2}
+\begin{enumerate}
+\addtocounter{enumi}{1}
+\item Compiler \texttt{exemple1.tex} : \texttt{latex exemple1.tex}
+\item Visualiser le fichier (DeVice Independant) \texttt{exemple1.dvi} :
+  \texttt{xdvi exemple1.dvi \&}
+\item transformer en fichier Postscript imprimable : \texttt{dvips exemple1.dvi}
+\item imprimer le fichier Postscript : \texttt{lpr exemple1.ps}
+\end{enumerate}
+
+\medskip 
+
+Autre solution avec \texttt{pdflatex} qui fournit un fichier pdf :
+\texttt{pdflatex exemple1.tex}
+\end{frame}
+
+
+
+\section{Le langage \LaTeX}
+
+
+\subsection{Les commandes et environnements \LaTeX}
+\begin{frame}[fragile]
+\frametitle{Les commandes et environnements \LaTeX}
+
+\begin{itemize}
+\item les caractères spéciaux : \verb|$#%&~_^\{}| échappés par antislash
+\item toute commande est préfixée par \textbf{antislash} : \verb_\TeX_ qui donne \TeX, \verb_\today_ qui donne \today
+\item une commande peut avoir de 1 à 9 paramètres 
+  \begin{itemize}
+  \item le premier peut être optionnel (valeur par défaut)
+  \item les autres sont obligatoires !
+  \end{itemize}
+\item \verb_\documentclass[a4paper]{article}_ a deux paramètres dont le premier
+  est optionnel (par défaut format letter size)
+\item un environnement E débute par \verb_\begin{E}_ et se termine par
+    \verb_\end{E}_; l'emboîtement doit être respecté %\$ 
+\item \texttt{document, itemize, enumerate, description} sont des environnements
+  très fréquents
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{La structure d'un fichier .tex}
+\begin{frame}[fragile]
+\frametitle{La structure d'un fichier .tex}
+
+\begin{enumerate}
+\item \verb_\documentclass[a4paper]{article} % type de document_
+\item \verb_\usepackage[francais]{babel} % les extensions à utiliser_
+\item \verb_\usepackage[T1]{fontenc} % etc._
+\item \verb_\title{Mon article} \author{Michel Meynard} % l'en-tête_
+\item \verb_\begin{document}\maketitle % début du corps du document_
+\item \verb_texte et commandes LaTeX ..._
+\item \verb_\end{document} % fin du document_
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\end{document} 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "polycopieLatex"
+%%% End: 

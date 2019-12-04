@@ -1,0 +1,42 @@
+[
+	{
+		"email":"tadel1000@gmail.fr",
+		"mdp":"!:$⁴5erT",
+		"nom":"terki",
+		"prenom":"adel",
+		"role":"member",
+		"ville":"montpellier",
+		"adresse":"197 rue saint louis",
+		"tel":"+33758421988"
+	 },
+	{
+		"email":"sftyh4581@yahoo.fr",
+		"mdp":"klP;a78",
+		"nom":"sfaihi",
+		"prenom":"chanez",
+		"role":"member",
+		"ville":"bejaia",
+		"adresse":"59 rue general peugeot",
+		"tel":"+213554123963"
+	},
+	{
+		"email":"mlinda154@hotmail.fr",
+		"mdp":"lKhB;§2",
+		"nom":"mrzouki",
+		"prenom":"linda",
+		"role":"member",
+		"ville":"paris",
+		"adresse":"12 rue aristide olivier",
+		"tel":"+3378741236"
+	},
+	{
+		"email":"ppompidor75@lirmm.fr",
+		"mdp":";lkd$*",
+		"nom":"pompidor",
+		"prenom":"pierre",
+		"role":"admin",
+		"ville":"montpellier",
+		"adresse":"1 rue foch",
+		"tel":"+33612854961"
+	}
+]

@@ -1,0 +1,17 @@
+package td9;
+
+public abstract class Personnage {
+	private String nom;
+	private int nombrePoints;
+	private int nombreVies;
+	
+	public Personnage(String n,int nbP,int nbV)
+	{
+		nom=n;
+		nombrePoints = nbP;
+		nombreVies = nbV;
+	}
+	
+	
+	
+}

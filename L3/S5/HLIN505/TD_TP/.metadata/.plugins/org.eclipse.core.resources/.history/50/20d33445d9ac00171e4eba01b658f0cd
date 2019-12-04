@@ -1,0 +1,12 @@
+package tpTest.foobar;
+
+import static org.junit.Assert.*;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+@RunWith(Parameterized.class)
+public class Mytest1 {
+	
+
+}

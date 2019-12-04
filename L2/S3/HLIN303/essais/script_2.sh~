@@ -1,0 +1,19 @@
+#!/bin/bash
+
+for f in *
+do
+
+    for p in $*
+    do
+
+	if [ -f "$f" ]
+	then
+	    r='grep -c $p "$f" 2> /dev/null'
+	    if [[ $r > 0 ]]
+	    then
+		echo "$f contient $p"
+
+	    fi
+	fi
+    done
+done    

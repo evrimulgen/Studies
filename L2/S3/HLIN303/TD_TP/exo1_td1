@@ -1,0 +1,26 @@
+#include<isotream>
+#include<ctime>
+#include<cstdlib>
+
+void ech1 (int a, int b) {
+int c;
+c=a; a=b; b=c; }
+
+void ech2 (int a,int b){
+int c;
+c=*a; *a=*b; *b=c; }
+
+void ech3(int &a, int &b) {
+int  c;
+c=a; a=b; b=c; }
+
+void ech4(size_t u, size_t v, int *t){
+int c;
+c=t[u]; t[u]=t[v]; *(t+v)=c; }
+
+#define PrintVal(v)
+std::cout << "l" <<_line_<<":"
+<< #v "=" <<v
+<<std::endl
+
+int main(int argc, char** argv) {

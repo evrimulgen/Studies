@@ -1,0 +1,3 @@
+cd /usr/share/openproj/
+
+java -Djava.vendor="Sun Microsystems Inc." -jar openproj.jar

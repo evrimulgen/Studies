@@ -1,0 +1,38 @@
+package td7;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+
+
+public class CollectionFeuillesSalaire{
+
+	private ArrayList<FeuilleSalaire> lfs;
+	
+	public CollectionFeuillesSalaire(ArrayList<FeuilleSalaire> lfs)
+	{
+		this.lfs= lfs;
+	}
+	
+	public void print()
+	{
+		 // lambda expression
+		 lfs.stream().forEach(e -> System.out.println(e.toString()));
+		
+	}
+	
+	public class ComparateurParNBHP1 implements Comparator <FeuilleSalaire>{
+
+		public int compare(FeuilleSalaire fs1,FeuilleSalaire fs2)
+		{
+			return (int) (fs1.getNbHeuresPayes()-fs2.getNbHeuresPayes());
+		}
+	}
+
+	
+	public void triParNombreHeuresP()
+	{
+	  Collections.sort(lfs,new ComparateurParNBHP1());
+	}
+}

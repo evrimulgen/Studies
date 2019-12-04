@@ -1,0 +1,22 @@
+[
+	{ 
+		"name" : "Hôpital Gui de Chauliac",
+		"type": "hopital",
+		"geometry": { "type": "Point", "coordinates": [ 3.862730493104229, 43.630330276796649 ] } 
+	},
+	{ 
+		"name" : "CHU Montpellier",
+		"type": "hopital",
+		"geometry": { "type": "Point", "coordinates": [ 3.851445384659789, 43.631729774421395 ] } 
+	},
+	{ 
+		"name" : "Hôpital Lapeyronie",
+		"type": "hopital", 
+		"geometry": { "type": "Point", "coordinates": [ 3.851451561989399, 43.629834403402938 ] } 
+	},
+	{ 
+		"name" : "Centre Medico Dentaire",
+		"type": "hopital",
+		"geometry": { "type": "Point", "coordinates": [ 3.869634360195202, 43.627798376159276 ] } 
+	}
+]

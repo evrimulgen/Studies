@@ -1,0 +1,64 @@
+;TERKI MOHAMED ADEL 21611143 GROUPE B
+
+;exercice 5:
+(define domino-pG (lambda(domino) (car domino)))
+(define domino-pD (lambda(domino) (cadr domino)))
+(define jeu-vide ())
+(define make-jeu (lambda() jeu-vide))
+(define jeu-vide? (lambda (j) (null? j)))
+(define peut-jouer? (lambda(jeu n)
+                         (cond ((jeu-vide? jeu) #f)
+                               ((or (= n (domino-pD (car jeu)) ) (= n (domino-pG (car jeu)) ) ) #t)
+                               (else (peut-jouer? (cdr jeu) n)))))
+
+
+;(peut-jouer '((1 1) (0 1) (3 5) (3 3)) 0)
+
+;exercice 6:
+(define est_double? (lambda(domino)  (= (domino-pG domino) (domino-pD domino)) ))
+(define doubles (lambda(jeu)
+                  (cond ((null? jeu) ()) 
+                        ((est_double? (car jeu)) (cons (car jeu) (doubles (cdr jeu)) ))
+                        (else (doubles (cdr jeu)) ) ) ) )
+
+;exercice 7:
+(define make-domino (lambda (x y) (if (and (<= x 6) (<= y 6) (>= x 0) (>= y 0)) (list x y) (display "valeurs incorrectes"))))
+(define retourner (lambda (domino)
+                    (make-domino (domino-pD domino) (domino-pG domino))))
+(define premier-dom-chaine (lambda(j) (car j)))
+(define suite-dom-chaine (lambda(j) (cdr j)))
+(define ext_g (lambda(jeu) (car (car jeu) )))
+(define ext_d (lambda(jeu) (cond ((null? jeu) )
+                                 ((null? (suite-dom-chaine jeu)) (domino-pD (premier-dom-chaine jeu) ) )
+                                 (else (ext_d (suite-dom-chaine jeu))))))
+
+
+(define supprimer (lambda(j d) 
+                 (cond ((null? j) '() )
+                       ((not(equal? (car j) d)) (cons (car j) (supprimer (cdr j) d) ) )
+                       (else (cdr j)))))
+
+(define ajouter (lambda(d j)
+                  (cond ((null? j) (cons d () ))
+                        ((equal? (ext_d j) (domino-pG d)) (append j (list d)))
+                        ((equal? (ext_d j) (domino-pD d)) (append j (list(retourner d))))
+                        ((equal? (ext_g j) (domino-pD d)) (cons d j))
+                        ((equal? (ext_g j) (domino-pG d)) (cons (retourner d) j))
+                        (else j)
+                        )))
+
+(define contient (lambda(d n)
+                   (or (= n (domino-pD d)) (= n (domino-pG d)) )))
+                        
+                      
+
+(define pose (lambda(j ch)
+               (cond ( (jeu-vide? j) )
+                     ( (or (contient (premier-dom-chaine j) (ext_d ch))
+                        (contient (premier-dom-chaine j) (ext_g ch))
+                        ) (ajouter (premier-dom-chaine j) ch)
+                          (supprimer (premier-dom-chaine j) j)
+                          ) 
+                  (else (pose (suite-dom-chaine j) ch) ))))
+
+; (pose '((1 1) (0 1) (3 5) (3 3)) '((1 2) (2 2) (2 5) (5 6) (6 3)) )

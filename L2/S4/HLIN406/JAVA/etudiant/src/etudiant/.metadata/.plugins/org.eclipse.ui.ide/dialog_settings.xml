@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/auto_home/mterki/workspace/projet_poste"/>
+		<item value="/auto_home/mterki/workspace/Etu"/>
+		<item value="/auto_home/mterki/JAVA/Etu"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="352" key="DIALOG_X_ORIGIN"/>
+		<item value="289" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

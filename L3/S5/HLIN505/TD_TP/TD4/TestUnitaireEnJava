@@ -1,0 +1,45 @@
+							09/10/2017
+
+
+Exercice 1 :
+
+Réponse 1 :
+a- *Aucun orde définie
+   *Toutes les méthodes @test sont appelées dans ubn ordre quelconque
+   *Les méthodes @Before avant cahque méthode @test
+
+b- Il y a une erreur pour le TestLouche
+   les 4 autres teste testFooInitParDefauti ne passent pas
+
+Réponse 2 :
+a- trivial
+b-
+
+Réponse 3 :
+a-  n'utilise pas d'assertions JUNIT
+b- le problème rencontré serait l'accée aux attributs de la classe SUT(x,y,z)
+ , dans ce cas il faudra concevoire des acceusseurs
+
+
+Réponse 4 :
+exemple :
+*Classes tests paramétrés :
+@RumWith<Parametrized.class> //avant la classe
++ constructeur paramétré //correspendant aux paramétres du constructeur
+@Parameters
+//méthode renvoyant une collection de paramétres
+
+*Classes suite de testes :
+@RunWith<Suite.class> // avant la classe
+@Suite.SuiteClasses C
+{
+	A.class;
+	B.class;
+	C.class;
+
+}
+
+Réponse 5 & 6 & 7 :
+/auto_home/mterki/Licence/L3/S5/HLIN505/TD_TP/TD4
+
+	

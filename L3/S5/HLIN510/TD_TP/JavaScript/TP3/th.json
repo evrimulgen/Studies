@@ -1,0 +1,14 @@
+[
+	{
+		"nom" : "restaurants",
+		"lien" : "restaurants.json"
+	},
+	{
+		"nom" :"hopitaux",
+		"lien" : "hopitaux.json"
+	},
+	{
+		"nom" :"terrainsSport",
+		"lien" : "terrainsSport.json"
+	}
+]

@@ -1,0 +1,11 @@
+<h1>
+	Research
+</h1>
+<form ngSubmit)="search()">
+	<label for="Tapez le nom du service/bien"></label>Tapez le nom du service/bien<input type="text" name="searchItem" [(ngModel)]="myItem">
+    <button type="submit">Search</button>
+</form>
+<ul>
+	<li *ngFor="let item of items">item.nom</li>
+</ul>	
+

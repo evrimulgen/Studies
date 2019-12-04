@@ -1,0 +1,10 @@
+#include <impair.h>
+#include <pair.h>
+#include <stdlib.h>
+
+int main(int argc,char ** argv[]){
+  if (pair(argv[1]))
+    printf("afficher: %d",argv[1],"est pair !");
+  else
+    printf("afficher: %d",argv[1],"est impair !");
+    

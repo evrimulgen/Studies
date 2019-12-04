@@ -1,0 +1,10 @@
+package td9;
+
+public class PersonnageBonus extends Personnage {
+
+	
+	public PersonnageBonus(String n,int nbP,int nbV)
+	{
+		super(n,nbP,nbV);
+	}
+}

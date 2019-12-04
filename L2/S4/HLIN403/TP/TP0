@@ -1,0 +1,7 @@
+(define (puis2 x)
+  (* x x))
+(define (puis4 x)
+  (puis2 (puis2 x)))
+(define (divisible x y)
+  (=(modulo x y) 0))
+ 

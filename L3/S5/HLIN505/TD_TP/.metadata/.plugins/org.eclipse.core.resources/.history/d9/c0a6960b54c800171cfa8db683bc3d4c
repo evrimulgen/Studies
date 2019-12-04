@@ -1,0 +1,15 @@
+package td7;
+
+public class essais {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		FeuTricolore f = new FeuTricolore();
+		Iterator<Color> it = f.iterator();
+		
+		for(int i=0;i < 3;i++)
+			System.out.println(it.next());
+	}
+
+}

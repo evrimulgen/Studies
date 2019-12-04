@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"idService":"1"}' localhost:8888/services/deleteService

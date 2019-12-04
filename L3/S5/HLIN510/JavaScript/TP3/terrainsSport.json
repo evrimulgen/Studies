@@ -1,0 +1,17 @@
+[
+	{	
+		"name" : "tennis",
+		"type": "sport",   
+		"geometry": { "type": "Point", "coordinates": [ 3.918105080397518, 43.573805851713246 ] } 
+	},
+	{	
+		"name" : "escalade",
+		"type": "sport", 
+		"geometry": { "type": "Point", "coordinates": [ 3.99108861961098, 43.683294690375064 ] } 
+	},
+	{	
+		"name" : "table_tennis",
+		"type": "sport",
+		"geometry": { "type": "Point", "coordinates": [ 3.865965048088971, 43.611548393917012 ] } 
+	}
+]

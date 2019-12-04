@@ -1,0 +1,15 @@
+package tpTest.foobar;
+
+
+import static org.junit.Assert.*;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+
+@RunWith(Suite.class)
+public class TestSuites ({
+	TestParametreFoo.class,
+	TestFooBar.class,
+	Mytest.class
+})

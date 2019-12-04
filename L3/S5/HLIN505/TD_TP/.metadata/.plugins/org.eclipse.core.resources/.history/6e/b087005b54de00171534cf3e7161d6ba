@@ -1,0 +1,8 @@
+package td9;
+
+public class PersonnageInvisible extends Personnage {
+
+	private boolean visible;
+	private int tempsAttente;
+	private int tempsInvis;
+}

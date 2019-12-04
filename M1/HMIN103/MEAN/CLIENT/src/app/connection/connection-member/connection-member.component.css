@@ -1,0 +1,21 @@
+.connection{
+	font-family: "arial";
+	font-weight: bold;
+	color: #ff0066;
+	text-align: center;
+	background-color: #4dff4d;
+	width:600px;
+	height: 300px;
+	border-style: solid;
+	border-radius:  25px;
+}
+
+.userAccount{
+	border-style: solid;
+	border-color: black;
+}
+
+input{
+	border-color: #ff0066;
+	border-radius:  25px;
+}

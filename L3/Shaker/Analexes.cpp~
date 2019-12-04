@@ -1,0 +1,14 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+
+  char l1[1000];
+  char l2[1000];

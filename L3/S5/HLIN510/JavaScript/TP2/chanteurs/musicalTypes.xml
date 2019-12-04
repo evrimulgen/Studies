@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<chanteurs catégorie="Chanteurs de légende">
+	<chanteur>
+		Le sérotonique Mortimer Shuman
+		<album titre="Le lac majeur" image="Le_lac_majeur.jpg">
+			<titre nom="Le lac majeur"> MP3 pour Le lac majeur</titre>
+			<titre nom="Papa - Tango - Charlie"> MP3 pour Papa - Tango - Charlie</titre>
+		</album>
+	</chanteur>
+	<chanteur>
+		L'inoubliable Demis Roussos
+		<album titre="Forever and ever" image="forever_and_ever.jpg">
+			<titre nom="Forever and ever"> MP3 Forever and ever</titre>
+			<titre nom="My friend the wind"> MP3 pour My friend the wind</titre>
+			<titre nom="Good bye my love good bye"> MP3 pour Good bye my love good bye</titre>
+		</album>
+	</chanteur>
+	<chanteur>
+		L'intemporel Christophe
+		<album titre="Les mots bleus" image="les_mots_bleus.jpg">
+			<titre nom="Le dernier des Bevilacqua">MP3 pour Le dernier des Bevilacqua</titre>
+			<titre nom="Senorita">MP3 pour Senorita</titre>
+			<titre nom="Les mots bleus">MP3 pour Les mots bleus</titre>
+		</album>
+		<album titre="Clichés d'amour" image="cliches_d_amour.jpg">
+			<titre nom= "Dernier baiser">MP3 pour Dernier baiser"</titre>
+			<titre nom="Noël blanc">MP3 pour Noël blanc</titre>
+		</album>
+	</chanteur>
+</chanteurs>
+	

@@ -1,0 +1,42 @@
+package td7;
+
+
+import java.util.Iterator;
+
+public class IterateurFS implements Iterator<Object> {
+	
+	private FeuilleSalaire f;
+	private int i=0;
+	
+	public IterateurFS(FeuilleSalaire f)
+	{
+		this.f=f;
+	}
+
+	
+	public boolean hasNext()
+	{
+		return true;
+	}
+
+	public Object next()
+	{
+		switch (i)
+		{
+		case 0 :{  i++; return f.getEmployeur();} 
+		case 1 :{  i++; return f.getSalarie(); } 
+		case 2 :{  i++; return f.getConventionCollective();} 
+		case 3 :{  i++; return f.getNbHeuresPayes(); } 
+		case 4 :{  i++; return f.getPrelevementsFiscaux();} 
+		case 5 :{  i++; return f.getNetAPayer(); } 
+		default:{ i=0; return 	f.getEmployeur();}
+		}
+		
+	}
+	
+	
+	public void remove() throws UnsupportedOperationException
+	{
+		throw new UnsupportedOperationException();
+	}
+}

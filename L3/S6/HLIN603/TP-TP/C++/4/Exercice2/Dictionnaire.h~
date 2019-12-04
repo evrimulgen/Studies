@@ -1,0 +1,7 @@
+#ifndef __DICTIONNAIRE__H
+#define __DICTIONNAIRE__H
+
+template<typename TypeCle,typename TypeValeur>
+class Dictionnaire<TypeCle,TypeValeur>{
+  
+}

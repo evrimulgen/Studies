@@ -1,0 +1,22 @@
+[
+	{	
+		"name": "L'oustal de St Jean",
+		"type": "restaurant",
+		"geometry": { "type": "Point", "coordinates": [ 3.845461752386913, 43.559394110648938 ] } 
+	},
+	{ 
+		"name": "La Cascade",
+		"type": "restaurant", 
+		"geometry": { "type": "Point", "coordinates": [ 3.984032091962876, 43.67780862402244 ] } 
+	},
+	{ 
+		"name": "La Pleine Lune",
+		"type": "restaurant", 
+		"geometry": { "type": "Point", "coordinates": [ 3.86696892853563, 43.607599430611245 ] } 
+	},
+	{ 
+		"name": "Le Chupinazo",
+		"type": "restaurant", 
+		"geometry": { "type": "Point", "coordinates": [ 3.876892214106577, 43.608045122230166 ] } 
+	}
+]

@@ -1,0 +1,18 @@
+package td7;
+
+import java.util.ArrayList;
+
+public class CollectionFeuillesSalaire {
+
+	private ArrayList<FeuilleSalaire> lfs;
+	
+	public CollectionFeuillesSalaire(ArrayList<FeuilleSalaire> lfs)
+	{
+		this.lfs= lfs;
+	}
+	
+	public void print()
+	{
+		return lfs.stream().forEach(salarie -> System.out.println(salarie));
+	}
+}

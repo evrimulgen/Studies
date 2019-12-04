@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"email":"sofiane1000@gmail.fr","mdp":"54+^","nom":"chaher","prenom":"sofiane","role":"member","ville":"montpellier","adresse":"150 rue adrien proby","tel":"+33689512311"}' 8888:localhost/membres/addNewMember

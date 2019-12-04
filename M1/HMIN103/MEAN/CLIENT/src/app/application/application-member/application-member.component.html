@@ -1,0 +1,31 @@
+<td *ngIf="!iSubscribed">
+	<form (ngSubmit)="memberSubscribed()">
+		<div>
+			<label>e-mail</label>
+		  	<input id="mail" type="text" [(ngModel)]="mail"  name="mail" placeholder="e-mail">
+			<label>mot de passe</label>
+			<input id="pass" type="text"[(ngModel)]="mdp"  name="mdp" placeholder="mot de passe">
+		</div>
+		<div>	
+			<label>nom</label>
+			<input id="lastName" type="text" [(ngModel)]="nom" name="mdp" placeholder="nom">
+			<label>prenom</label>
+			<input id="firstName" type="text" [(ngModel)]="prenom" name="prenom" placeholder="prenom">
+		</div>
+		<div>	
+			<label>role</label>
+			<input id="duty" type="text" [(ngModel)]="role" name="role" placeholder="role">
+			<label>adresse</label>
+			<input id="adress" type="text" [(ngModel)]="adresse" name="adress" placeholder="adresse postale">
+		</div>
+		<div>	
+			<label>ville</label>
+			<input id="town" type="text"[(ngModel)]="ville"  name="ville" placeholder="ville">
+			<label>tel</label>
+			<input id="phone" type="text" [(ngModel)]="tel" name="tel" placeholder="tel">
+		</div>
+		<div>
+			<button type="submit">Validation</button> 
+		</div>	
+	</form>	
+</td>	

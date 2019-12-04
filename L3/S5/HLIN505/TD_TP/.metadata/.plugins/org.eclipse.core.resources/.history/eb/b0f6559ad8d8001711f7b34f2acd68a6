@@ -1,0 +1,44 @@
+package td9;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+
+
+
+public class exercice1 {
+	
+
+	private static ArrayList<Object> list = new ArrayList<Object>();
+	
+	
+	public static void getMethods(int i)
+	{
+		Object o = list.get(i);
+		Method[] methods =  o.getClass().getMethods();
+		System.out.println("nom de la classe"+o.getClass().getName());
+		for(int j=0;j<methods.length;j++)
+		{	
+			String name = methods[j].getName();
+			Class retour = methods[j].getReturnType();
+			System.out.print(retour.getName()+" "+name+"(");
+			Class[] attrs = methods[j].getParameterTypes();
+			for(Class attr : attrs )
+			{
+				System.out.print(attr.getName()+",");
+			}
+			System.out.println(")");
+		}
+	}
+	
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		exercice1.list.add(new Integer(4));
+		exercice1.list.add(new Double(19.5));
+		
+		exercice1.getMethods(0);
+	}
+
+}

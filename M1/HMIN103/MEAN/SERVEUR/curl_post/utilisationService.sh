@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"idBienOuServ":"5", "bienOuServ":"serv"}' localhost:8888/disponibilites/utilisationService

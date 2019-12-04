@@ -1,0 +1,18 @@
+#ifndef ABR_H
+#define ABR_H
+
+#include"noued.h"
+#include<iostream>
+
+
+
+template <typename T>
+Class Abr {
+ private:
+  Noeud<T> n;
+
+  Abr(){n.();};
+
+  Abr(Noeud<T>){n.val(T);n.gauche(NULL);n.droit(NULL);};
+
+ bool find

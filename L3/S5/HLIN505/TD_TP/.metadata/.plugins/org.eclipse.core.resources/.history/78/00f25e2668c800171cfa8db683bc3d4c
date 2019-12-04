@@ -1,0 +1,6 @@
+package td7;
+
+public class ComparateurParNBHP implements Comparator <FeuilleSalaire>{
+
+	
+}

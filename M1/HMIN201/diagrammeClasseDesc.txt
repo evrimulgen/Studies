@@ -1,0 +1,120 @@
+******************************UTILISATEUR******************************
+ id
+ password 
+ nom 
+ prenom 
+ email 
+ role 
+ baserole 
+ roleComplet
+ telephone 
+ fax 
+ roleOverrided
+******************************ETUDIANT******************************
+numeroEtudiant
+promotion
+
+
+******************************REPRESENTANTENTREPRISE******************************
+fonctionOccupee 
+
+
+******************************ENSEIGNANT******************************
+//walou
+******************************STAGE******************************
+
+id
+idAjouteur
+idEntreprise
+idTuteurUniv
+idRapporteur
+idTuteurEntreprise
+titre
+description
+duree=0;
+dateDebut
+rapport
+etat
+idEtudiant
+parcours
+fichier 
+remuneration 
+conditions 
+objectif 
+avantages 
+datePropose 
+dateValide 
+niveauRequis 
+
+******************************PARCOURS******************************
+id
+niveau
+acronyme
+intitule
+description 
+
+******************************SOUTENANCE******************************
+titre 
+etudiant 
+tuteurUniv 
+tuteurEntreprise 
+rapporteur 
+entreprise 
+commentaire 
+
+
+******************************PIECEJOINTE******************************
+
+idPieceJointe
+idStage
+nom
+type
+idUser
+annee
+
+******************************ENTREPRISE******************************
+
+id
+nom
+adresse 
+website
+description
+siret
+telephone
+fax
+idResponsableAdministratif
+secteurActivite 
+nbSalaries 
+local 
+chiffreAffaires 
+
+
+
+******************************CRENEAU******************************
+
+idCreneau
+idSalle
+dateDeb
+heureDeb
+dispo
+etat 
+commentaire
+
+
+******************************SALLE******************************
+
+
+idSalle
+nom
+batiment
+capacite
+commentaire
+
+
+
+******************************EMBAUCHE******************************
+
+
+
+
+

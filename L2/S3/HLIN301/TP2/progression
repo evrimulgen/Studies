@@ -1,0 +1,18 @@
+1) a— ajouter un élément de valeur 11 en fin de la liste l1 (attention à l’appel de insererFinLSC)
+b— insérer un élément de valeur 22 en deuxième position de la liste l1 ; donnez 2 versions :
+	*l’une utilisant l’opération insererApresLSC
+	*la seconde transformant directement le chaı̂nage de la liste l1 en utilisant creerLSC
+c—supprimer le deuxième élément de l1 ; donnez 2 versions :
+	*l’une utilisant l’opération supprimerLSC,
+	*l’autre modifiant directement le chaı̂nage de l1.
+d—inverser les 2 premiers éléments de l1 ; donnez 2 versions :
+	*l’une inversant les valeurs (en modifiant les champs info),
+	*l’autre inversant l’ordre des cellules (en modifiant les champs succ).
+
+2)Complétez la définition des deux fonctions dernierLSC et estTrieeLSC dont les alogithmes ont été
+étudiés en TD. Testez ces fonctions : compilez et exécutez le programme avec l’option 2.
+3)Vous trouverez ensuite l’entête de la fonction oterRepetitionLSC. Cette fonction supprime les
+répétitions d’éléments consécutifs égaux en modifiant le chaı̂nage de la liste : lorsque 2 éléments consécutifs
+sont égaux on supprime la deuxième cellule en modifiant le champ succ du premier. On vous demande d’écrire
+une version itérative et une version récursive (oterRepetitionLSCR).
+Complétez les corps des 2 fonctions, compilez et testez (avec l’option 3).

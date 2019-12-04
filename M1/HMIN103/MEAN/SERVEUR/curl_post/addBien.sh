@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"idBien":"7","nom":"pince","descriptif":"bon état","lienPhoto":"pince.jpg","prixNeuf":"1.5€" }' localhost:8888/biens/addNewBien

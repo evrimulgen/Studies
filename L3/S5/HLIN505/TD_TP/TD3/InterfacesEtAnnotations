@@ -1,0 +1,99 @@
+							02/10/2017
+1-Extractions d'une interface :
+
+Réponse 1:
+public interface IFileAttente
+{
+	void entre(Personne);
+	Personne sort();
+	int taille();
+	boolean estVide();
+	void vider();
+
+}
+
+Réponse 2 :
+public class FileAttente implements IFileAttente
+{
+	....
+
+}
+
+Réponse 3 :
+public interface IFileAttenteStat extends IFileAttente
+{
+	....
+	int getNbEntrees();
+	int getNbSorties();
+
+}
+
+Réponse 4 :
+public class FileAttenteStat extends FileAttente implements IFileAttente
+{
+	private int nbSorties;
+	private int nbEntrees;
+
+	public int getNbEntrees()
+	{
+		return nbEntrees;
+	}
+
+	public int getNbSorties()
+	{
+		return nbSorties;
+	}
+
+	@override
+	public void entre(Personne p)
+	{
+		super.entre(p);
+		nbEntrees++;
+	}
+	
+	@override
+	public Personne sort()
+	{
+		nbSorties--;
+		return super.sort();
+	}
+
+}
+
+Réponse 5 :
+voir le fichier HLIN505.png(/auto_home/mterki/Licence/L3/HLIN505.png)
+
+2- Interfaces Comparable et Comparator :
+2.1 Ordre naturel entre objets avec l'interface Comparable &
+2.2 Définitions de comparaisons entre objets avec l'interface Comprator :
+
+Réponse 6 & Réponse 7 : (voire le rep :/auto_home/mterki/Licence/L3/S5/HLIN505/TD_TP/TD3/src/ )
+
+1- public class Personne implements Comparable<Personne>
+{
+	private String nom;
+	private int age;
+
+	public int compareTo(Personne p)
+	{
+		return this.nom.compareTo(p.getNom());
+	}
+
+}
+
+Remarques:
+Comparable:
+	-implémenté par le type à comparer
+	-1 seule manière de comparer (ordre naturel) --> compareTo(..)
+
+Comparator:
+	-implémenté par des classes "Comparateurs" définies uniquement pour défiinir une mamnière de comparer
+	-autant de manières de comparer <> que de classes définies
+
+
+
+
+
+	
+	
+

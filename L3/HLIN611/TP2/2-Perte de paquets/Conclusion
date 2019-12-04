@@ -1,0 +1,3 @@
+Dans le cas d'une pertde paquest dans une configuation simple et basqieu comme celle des salles machines de la FAC il y a 2 scénarios possibles :
+1- le buffeur de reception est déjà plein et ne peut plus recevoir de messages .
+2- la socket du recepteur n' pas encore été créée 

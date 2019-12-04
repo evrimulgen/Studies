@@ -1,0 +1,27 @@
+package td1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Exo 2 Expressions arithmétiques
+		Expression a = new Constante (5);
+		Expression b = new Constante (2);
+		Expression c = new Constante (3);
+		
+		Expression e1 = new ExpressionComplexe(a,"+",b);
+		Expression e2 = new ExpressionComplexe(e1,"*",c);
+		Expression e3 = new ExpressionComplexe(new Constante(4),"*",e2);
+		
+	    System.out.println(a.eval());
+	    System.out.println(e1.eval());
+	    System.out.println(e2.eval());
+	    System.out.println(e3.eval());
+	    
+	    //Exo 3 Classes internes
+	    
+	    
+	    
+	}
+
+}

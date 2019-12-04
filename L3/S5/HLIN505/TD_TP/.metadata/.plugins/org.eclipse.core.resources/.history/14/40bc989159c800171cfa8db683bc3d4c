@@ -1,0 +1,90 @@
+package td7;
+
+public class FeuilleSalaire implements Iterable<FeuilleSalaire>  {
+
+	private String employeur;
+	private String salarie;
+	private String conventionCollective;
+	private double nbHeuresPayes; 
+	private double prelevementsFiscaux;
+	private double netAPayer;
+	
+	public FeuilleSalaire(String e,String s,String cc,double nbhp,double pf,double np)
+	{
+		employeur=e;
+		salarie=s;
+		conventionCollective=cc;
+		nbHeuresPayes=nbhp;
+		prelevementsFiscaux=pf;
+		netAPayer=np;
+	}
+	
+	
+	public IterateurFS iterator()
+	{
+		return new IterateurFS(this);
+	}
+
+
+	public String getEmployeur() {
+		return employeur;
+	}
+
+
+	public void setEmployeur(String employeur) {
+		this.employeur = employeur;
+	}
+
+
+	public String getSalarie() {
+		return salarie;
+	}
+
+
+	public void setSalarie(String salarie) {
+		this.salarie = salarie;
+	}
+
+
+	public String getConventionCollective() {
+		return conventionCollective;
+	}
+
+
+	public void setConventionCollective(String conventionCollective) {
+		this.conventionCollective = conventionCollective;
+	}
+
+
+	public double getNbHeuresPayes() {
+		return nbHeuresPayes;
+	}
+
+
+	public void setNbHeuresPayes(double nbHeuresPayes) {
+		this.nbHeuresPayes = nbHeuresPayes;
+	}
+
+
+	public double getPrelevementsFiscaux() {
+		return prelevementsFiscaux;
+	}
+
+
+	public void setPrelevementsFiscaux(double prelevementsFiscaux) {
+		this.prelevementsFiscaux = prelevementsFiscaux;
+	}
+
+
+	public double getNetAPayer() {
+		return netAPayer;
+	}
+
+
+	public void setNetAPayer(double netAPayer) {
+		this.netAPayer = netAPayer;
+	}
+	
+	
+	
+}

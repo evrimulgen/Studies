@@ -1,0 +1,6 @@
+package td9;
+
+public class PersonnageInvisible extends Personnage {
+
+	private boolean visible;
+}

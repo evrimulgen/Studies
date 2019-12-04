@@ -1,0 +1,13 @@
+
+
+
+void TriR(TableauCellule T,size_t d,size_t f){
+  size_t p=d+f/2;
+  size_t i=d;  size_t=f;
+
+  while ((i<p) && (j>p)){
+
+    if ( T[i]>T[p]) && (t[j]<T[p]){echanger(T[i],T[j]);}
+    else if (T[i]>T[p]){echanger (T[i],T[p])}
+    else if (T[j]<T[p]){echanger (T[j],T[p])}
+    i++; j--; p=

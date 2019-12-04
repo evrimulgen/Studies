@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;biliotheque.NoticeBibliograĥique.java&apos; to &apos;NoticeBibliograpĥique.java&apos;&#x0A;- Original project: &apos;Bibliothèque&apos;&#x0A;- Original element: &apos;biliotheque.NoticeBibliograĥique.java&apos;&#x0A;- Renamed element: &apos;biliotheque.NoticeBibliograpĥique.java&apos;" description="Rename compilation unit &apos;NoticeBibliograĥique.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;biliotheque{NoticeBibliograĥique.java" name="NoticeBibliograpĥique.java" references="false" stamp="1488537683200" version="1.0"/>
+</session>

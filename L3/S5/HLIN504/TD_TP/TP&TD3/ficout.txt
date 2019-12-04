@@ -1,0 +1,2 @@
+addition =  12 
+mult =  35 

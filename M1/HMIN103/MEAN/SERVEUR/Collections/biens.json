@@ -1,0 +1,45 @@
+[
+	{
+		"idBien":"1",
+		"nom":"marteau",
+		"descriptif":"neuf",
+		"lienPhoto":"marteau.jpg",
+		"prixNeuf":"9€"
+	},
+	{
+		"idBien":"2",
+		"nom":"balai",
+		"descriptif":"bon état",
+		"lienPhoto":"balai.jpg",
+		"prixNeuf":"3€"
+	},
+	{
+		"idBien":"3",
+		"nom":"tournevis cruciforme",
+		"descriptif":"neuf",
+		"lienPhoto":"tournevisCruciforme.jpg",
+		"prixNeuf":"4€"
+	},
+	{
+		"idBien":"4",
+		"nom":"pelle",
+		"descriptif":"ocassion",
+		"lienPhoto":"pelle.jpg",
+		"prixNeuf":"5€"
+	},
+	{
+		"idBien":"5",
+		"nom":"burin",
+		"descriptif":"bon état",
+		"lienPhoto":"burin.jpg",
+		"prixNeuf":"3€"
+	},
+	{
+		"idBien":"6",
+		"nom":"cable electrique",
+		"descriptif":"100 mètres de long",
+		"lienPhoto":"cablesElec.jpg",
+		"prixNeuf":"40€"
+	}
+]
+		

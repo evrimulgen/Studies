@@ -1,0 +1,11 @@
+#include<iostream>
+
+int main(){
+
+  template <typename T>
+    const T &max3(const T &x,const T &y,const T &z){
+    if (x>=y && x>=z) retuen x;
+    if (y>=x && y>=z) retuen y;
+    return z;}
+
+  

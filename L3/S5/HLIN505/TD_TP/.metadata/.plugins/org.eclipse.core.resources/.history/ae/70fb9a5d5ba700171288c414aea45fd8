@@ -1,0 +1,6 @@
+import java.util.Comparator;
+
+public class ComparateurPersonne implements Comparator<Personne> {
+
+	
+}

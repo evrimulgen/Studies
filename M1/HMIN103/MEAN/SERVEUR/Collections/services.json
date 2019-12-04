@@ -1,0 +1,42 @@
+[
+	{
+		"idService":"1",
+		"descritptif":"coiffure"
+	},
+	{
+		"idService":"2",
+		"descritptif":"plomberie"
+	},
+	{
+		"idService":"3",
+		"descritptif":"electricité"
+	},
+	{
+		"idService":"4",
+		"descritptif":"réparation electro-ménager"
+	},
+	{
+		"idService":"5",
+		"descritptif":"réparation matériel informatique"
+	},
+	{
+		"idService":"6",
+		"descritptif":"réparation automobiles"
+	},
+	{
+		"idService":"7",
+		"descritptif":"lavage automobile"
+	},
+	{
+		"idService":"8",
+		"descritptif":"déménagement"
+	},
+	{
+		"idService":"9",
+		"descritptif":"covoiturage"
+	},
+	{
+		"idService":"10",
+		"descritptif":"cuisine"
+	}
+]

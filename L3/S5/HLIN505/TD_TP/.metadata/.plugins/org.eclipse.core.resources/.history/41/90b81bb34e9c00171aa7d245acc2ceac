@@ -1,0 +1,20 @@
+package td1;
+
+public class Constante {
+	private int n;
+	
+	public Constante(int i){
+		this.n=i;
+	}
+
+	public int getConstante() {
+		return n;
+	}
+
+	public void setConstante(int n) {
+		this.n = n;
+	}
+	
+	 
+
+}

@@ -1,0 +1,15 @@
+graph myGraph{ 
+z[style="filled" fillcolor =blue] 
+t[style="filled" fillcolor =yellow] 
+v[style="filled" fillcolor =red] 
+u[style="filled" fillcolor =red] 
+y[style="filled" fillcolor =yellow] 
+x[style="filled" fillcolor =blue] 
+x--y
+x--u
+x--v
+u--y
+v--z
+y--t
+u--t [style=dotted]
+}

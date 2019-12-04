@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"idService":"11","descritptif":"enseignements"}' localhost:8888/services/addNewService

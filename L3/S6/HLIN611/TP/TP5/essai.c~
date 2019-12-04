@@ -1,0 +1,28 @@
+#include<stdlib.h>
+#include<unistd.h>
+#include<stdio.h>
+
+int main(int argc,char** argv){
+
+ int i=0;
+ int tube[2];
+ int r=pipe(tube);
+	
+ while (i<10){
+	printf("In Parent process \n");
+	printf("i = %d \n",i);
+	write(tube[1],&i,sizeof(int));
+	switch(fork()){
+	case 0:{
+		int j=0;
+		printf("In chlid process \n");
+		read(tube[0],&j,sizeof(int));
+		printf("j = %d \n",j);
+		
+	}
+	case -1: printf("failed in duplictaion \n"); 
+	default:printf("WTF \n");
+	}
+	i++;
+	}
+}

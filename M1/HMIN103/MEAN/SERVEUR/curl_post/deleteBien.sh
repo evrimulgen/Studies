@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"idBien":"1"}' localhost:8888/biens/deleteBien

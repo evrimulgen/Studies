@@ -1,0 +1,157 @@
+(require racket/trace)
+
+;Q1
+(define F1 '(<-> (^ a b) (v (! a) b)))    
+(define F2 '(v (!(^ a (! b))) (! (-> a b)) ))
+(define F3 '(^ (!(-> a (v a b))) (! (! (^ a (v b (! c)))))))
+(define F4 '(^(^ (v (v (! a) b) d) (v (! d) c)) (^ (^ (v c a) (v (! c) b) ) (^ (v (! c) (! b)) (v (! b) d)))))
+(define F5 '(! a))
+(define F6 '(^ (! a) (! b)))
+;Q2
+(define (neg? f) (eq? f '!))
+(define (and? f) (eq? f '^))
+(define (or? f) (eq? f 'v))
+(define (imp? f) (eq? f '->))
+(define (equ? f) (eq? f '<->))
+(define (top? f) (eq? f 'T))
+(define (bot? f) (eq? f 'B))
+(define (symbLog? f) (or (top? f) (bot? f) (and? f) (neg? f) (imp? f) (equ? f) ) )
+(define (symbProp? f) (and (symbol? f) (not (symbLog? f))))
+(define (atomicFbf? f) (or (symbProp? f) (top? f) (bot? f)))
+(define (conBin? f) (or (and? f) (or? f) (imp? f) (equ? f)))
+
+(define (conRac f) (car f)) ; retourne le connecteur racine d'une fbf non atomique
+(define (fils f) (cadr f)) ; retourne le fils d'une fbf dont la racine est un connecteur unaire
+(define (filsG f) (cadr f)) ; retouren le fils gauche d'une fbf dont la racine est un connecteur binaire
+(define (filsD f) (caddr f)) ; retourne le fils droit d'une fbf dont la racine est un connecteur binaire  
+(define (negFbf? f)
+  (and (not (atomicFbf? f))
+       (neg? (conRac f)))) ; teste si une fbf a une negation comme connecteur unaire
+
+(define (fbf? f)
+  (cond ((atomicFbf? f) #t)
+        ((list? f) (cond ((and (= (length f) 2) (neg? (car f) ))
+                           (fbf? (fils f)))
+                         ((and (= (length f) 3) (conBin? (car f)))
+                           (and (fbf? (filsG f)) (fbf? (filsD f))))
+                         (else #f)))
+        (else #f)))
+;Q3
+(define (nbc f)
+         (cond ((atomicFbf? f) 0 )
+               ((negFbf? f)  (+ 1 (nbc (fils f)) ) )
+               ((conBin? (conRac f)) (+ 1 (nbc (filsG f)) (nbc (filsD f)) ) ) ) )      
+
+;Q4
+(define (prof f)
+          (cond ((atomicFbf? f) 0)
+                ((negFbf? f)  (+ 1 (prof (fils f)) ) )
+                ((conBin? (conRac f)) (+ 1 (max (prof (filsG f)) (prof (filsD f)) ) ) ) ) )
+
+(require racket/set )
+
+;Q5
+(define (ensSP f)
+  (cond ((atomicFbf? f) (set f))
+        ((negFbf? f) (ensSP (fils f)))
+        ((conBin? (conRac f)) (set-union (ensSP (filsG f)) (ensSP (filsD f)) ) )))
+;Q6
+(define (affiche f)
+  (cond ((atomicFbf? f) (display f) )
+        ((negFbf? f) (display "!(") (affiche (fils f)) (display ")") ) 
+        ((conBin? (conRac f))
+        (display "(") (affiche (filsG f)) (display " ") (display (car f)) (display " ") (affiche (filsD f)) (display ")")
+        )))
+
+;Q7
+(define I1 '((a . 1) (b . 0) (c . 1))) 
+(define I2 '((a . 0) (b . 0) (c . 0)))
+(define I3 '((a . 1) (b . 1) (c . 1)))
+
+;Q8
+(define (intSymb x I)
+   (if (equal? (car(car I)) x) (cdr (car I)) (intSymb x (cdr I))))   
+
+
+;Q9
+(define (intNeg a) (if (= a 1) 0 1)) 
+(define (intAnd a b)
+  (if (and (= a 1) (= b 1)) 1 0))
+
+(define (intOr a b)
+  (if (or (= a 1) (= b 1)) 1 0))
+
+(define (intImp a b)
+  (if (and (= a 1) (= b 0)) 0 1))
+
+(define (intEqu a b)
+  (if (= a b) 1 0))
+
+(define (intTop) 1)
+(define (intBot) 0)
+
+;Q10
+(define (valV f I)
+  (cond ((top? f) (intTop))
+        ((bot? f) (intBot))
+        ((atomicFbf? f) (intSymb f I))
+        ((negFbf? f) (intNeg (valV (fils f) I)))
+        ((and? (conRac f)) (intAnd (valV (fils f) I) (valV (filsD f) I)))
+        ((or? (conRac f)) (intOr (valV (filsG f) I) (valV (filsD f) I)))
+        ((imp? (conRac f)) (intImp (valV (filsG f) I) (valV (filsD f) I)))
+        ((equ? (conRac f)) (intEqu (valV (filsG f) I) (valV (filsD f) I)))))
+
+;Q11
+(define (modele? I f)
+  (valV f I))
+
+;Q12
+(define (ensembleInt-P&Q)
+     '( ( (p . 0) (q . 0) )
+        ( (p . 0) (q . 1) )
+        ( (pF1 . 1) (q . 0) )
+        ( (p . 1) (q . 1) ) ))
+
+;Q13
+(define (ensInt SP)
+        (cond ((set-empty? SP) '( () ) ) 
+              ((>= (set-count SP) 1 )
+               (letrec ((ajout0 (lambda (symbole) (cons  (cons (set-first SP) 0) symbole ) ))
+                        (ajout1 (lambda (symbole) (cons  (cons (set-first SP) 1) symbole ) )) )
+                 (append (map ajout0 (ensInt (set-rest SP) ) )
+                         (map ajout1 (ensInt (set-rest SP) ) )
+                         )))))
+(require trace)
+;Q14
+(define (satisfiable? f)
+  (letrec ((listeI (ensInt (ensSP f))))
+             (ormap (lambda(I) (= (valV f I) 1)) listeI) 
+             ))
+;Q15
+(define (valide? F)
+   (letrec ((listeI (ensInt (ensSP F))))
+             (andmap (lambda(I) (= (valV F I) 1)) listeI) 
+             ))
+
+;Q16
+(define (insatisfiable? F)
+  (letrec ((listeI (ensInt (ensSP F)))
+          (resultat (filter (lambda(I) (= (valV F I) 0)) listeI) ))
+   (equal? resultat listeI) ))
+
+;Q17
+(define (equivalent1? f1 f2)
+         (letrec ((ESP (set-union (ensSP f1) (ensSP f2)) )
+                  (listeI (ensInt ESP) ))
+          (andmap (lambda(I) (= (valV f1 I) (valV f2 I) )) listeI) ))
+
+;Q18
+(define (consequence2? l1 l2)
+  (insatisfiable? (list  '^   l1   (list '!  l2))))
+
+;Q19
+(define (ensSPallFbf F)
+  (cond ((null? F)  '())
+        (else (set-intersect (append (ensSP (car F)) (ensSPallFbf (cdr F) ) ) ) ) ) )
+
+  

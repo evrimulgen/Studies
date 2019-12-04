@@ -1,0 +1,27 @@
+package td7;
+
+import java.util.ArrayList;
+
+
+
+public class CollectionFeuillesSalaire{
+
+	private ArrayList<FeuilleSalaire> lfs;
+	
+	public CollectionFeuillesSalaire(ArrayList<FeuilleSalaire> lfs)
+	{
+		this.lfs= lfs;
+	}
+	
+	public void print()
+	{
+		 // lambda expression
+		 lfs.stream().forEach(e -> System.out.println(e.toString()));
+		
+	}
+	
+	public void triParNombreHeuresP()
+	{
+	  Collections.sort(lfs,new ComparateurParNBHP());
+	}
+}

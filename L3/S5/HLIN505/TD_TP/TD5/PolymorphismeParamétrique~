@@ -1,0 +1,10 @@
+							16/10/2017
+
+Remarques :
+*Lors de la compilation :
+-les types <...> sont effacés.
+-ils sont remplacés par "Object".
+-Des "typecast" sont ajoutés là ou ils sont nécéssaires.
+
+Exercice 1 & Exercice 2 & Exercice3:
+voir le directory : /auto_home/mterki/Licence/L3/S5/HLIN505/TD_TP/TD5/

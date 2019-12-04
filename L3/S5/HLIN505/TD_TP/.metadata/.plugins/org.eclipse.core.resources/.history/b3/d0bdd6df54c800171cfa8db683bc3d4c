@@ -1,0 +1,10 @@
+package td7;
+
+public class FeuilleSalaire {
+
+	private String employeur;
+	private String salarie;
+	private String conventionCollective;
+	private double nbHeuresPayes; 
+	private double prelevementsFiscaux;
+}

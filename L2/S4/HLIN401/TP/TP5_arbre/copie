@@ -1,0 +1,13 @@
+\documentclass{article} 
+ \usepackage{tikz} 
+ \begin{document} 
+ \resizebox{300pt}{!}{
+ \begin{tikzpicture}
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ1) at (5, 1) { (\textcolor{red}{0})\\this=\textcolor{red}{0x196fce0}\\Pere=\textcolor{red}{0x196fc20} (FGP=\textcolor{red}{Droit})};
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ2) at (-3, -2) { (\textcolor{red}{2})\\this=\textcolor{red}{0x196fd10}\\Pere=\textcolor{red}{0x196fce0} (FGP=\textcolor{red}{Gauche})};
+\draw[->, >=latex, color=blue] (SZ1) -- (SZ2);
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ3) at (14, -2) { (\textcolor{red}{4})\\this=\textcolor{red}{0x196fd40}\\Pere=\textcolor{red}{0x196fce0} (FGP=\textcolor{red}{Droit})};
+\draw[->, >=latex, color=blue] (SZ1) -- (SZ3);
+\end{tikzpicture}
+ } \end{document} 
+

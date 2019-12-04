@@ -1,0 +1,45 @@
+package td1;
+
+public class ListeChainee {
+	private Node racine;
+	private class Node {
+		private String nom;
+		private Node succ;
+		
+		public Node(String n){
+			nom=n;
+			succ=null;
+		}
+		
+		public int tailleListe(){
+			if(racine == null) return 0;
+			else return 1+ racine.succ.tailleListe();
+			
+		}
+		
+		public String afficherListe(){
+			if(racine == null) return "null";
+			else return racine.nom+" "+racine.succ.afficherListe();
+			
+		}
+	}
+	
+	public ListeChainee(){
+		racine = null;
+	}
+	
+	public void ajouterNoeud(String n){
+		Node tete = new Node(n);
+		tete.succ=racine;
+		racine = tete;
+	}
+	
+	/*public int tailleListe(){
+		if(racine == null) return 0;
+		else return 1+ racine.succ.tailleListe();
+		
+	}*/
+	
+	
+
+}

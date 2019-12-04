@@ -1,0 +1,12 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+  int Nj; //Note de JACK
+  int Nmax,Nmin;
+  float Moy;

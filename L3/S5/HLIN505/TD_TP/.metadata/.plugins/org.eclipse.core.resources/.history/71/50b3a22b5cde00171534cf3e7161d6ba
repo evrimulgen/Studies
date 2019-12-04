@@ -1,0 +1,71 @@
+package td9;
+
+import java.lang.Class;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.util.Scanner;
+
+
+/*
+public class FabriquePersonnages 
+{
+		public Personnage create(String n)
+		{
+			if(n.equals("PersonneBonus"))
+			{
+				return new PersonnageBonus();
+			}
+			else if(n.equals("PersonneInvisible"))
+			{
+				return new PersonnageInvisible();
+			}else {return null;}
+
+		}
+}
+*/
+	//avec introspection
+
+public class FabriquePersonnages
+	{
+		public static Personnage create(String n)
+		{
+			Class c;
+			try {
+				c = Class.forName(n);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try 
+			{
+			Personnage p = (Personnage) c.newInstance();
+			}
+			catch(IllegalAccessException e)
+			{
+				e.printStackTrace();
+			}
+			/* ou 
+			 *  
+			 * Constructor cons = c.getConstructor(); 
+			 *  Personnage p = (Personnage)const.newInstance();
+			 */
+
+			return p;
+		}
+		
+		public static Personnage initPersonnage(Personnage p)
+		{
+			Scanner sc = new Scanner(System.in);
+			
+			Field[] f=p.getClass().getDeclaredFields();
+			for(Field e : f)
+			{
+				String nom=e.getName();
+				System.out.println("saisissez le valeur pour l'attribut "+nom);
+			    Class<?> type=e.getType();
+			    // pas trop se casser la tête 2 ou 3 type possibles
+			}
+			
+		}
+}
+

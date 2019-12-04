@@ -1,0 +1,4 @@
+;TERKI MOHAMED ADEL 21611143 GROUPE B
+(define genliste (lambda(d f p)
+                   (cond ((> d p) ())
+                         ((<= d p) (cons d (genliste (+ d p) f p) )))))    

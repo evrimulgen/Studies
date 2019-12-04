@@ -1,0 +1,43 @@
+(*lambda == fun  *)
+(* recursive extraction *)
+
+Parameter A B C :Prop.
+
+
+
+Lemma fol1 : A->B->A .
+Proof.
+intro.
+intro.
+assumption.
+Qed.
+
+(* Pour afficher l'écriture en lambda terme *)
+Print fol1.
+
+(*
+Lemma fol2 : (A->B->C)->(A->B)->A->C .
+Proof.
+intros.
+assumption.
+Qed.
+*)
+
+
+(*Demonstration du lemme de decidabilité de l'égalité *)
+
+
+
+Lemma Decide : (forall n m : nat, {n=m}+{~(m=n)}).
+Proof.
+double induction n m.
+discriminate.
+Qed.
+
+(* extraction de la fonction qui teste l'égalité sur les entiers à partir du lemme précédent *)
+
+Print Decide.
+
+(* factorielle *)
+
+

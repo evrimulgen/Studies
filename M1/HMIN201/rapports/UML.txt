@@ -1,0 +1,19 @@
+*Diagrammes de séquences :
+--Diagramme de séquence de l’organisation d’une soutenance(RapportFDS2014.pdf(p9) & Rapport de projet G-stage2013.pdf(p19))
+
+
+
+
+
+*Diagrammes d'états :
+--Diagramme d'état transition d'un objet stage(Rapport 2010 gestion de stage.pdf(10) & Rapport de projet G-stage2013.pdf(p9))
+
+
+
+
+*Diagrammes de cas d'utilisation :
+--Diagramme de cas d’utilisation(RapportFDS2014.pdf(p7))
+
+
+*Diagrammes de classes:
+--diagrammes de classes (RapportFDS2014.pdf(p8))

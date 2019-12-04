@@ -1,0 +1,51 @@
+(define x 5)
+(define (f x) (* x x) )
+(define d 1)
+(define (plusd x) (+ x d))
+(define (g x) (+ 1 (h x)))
+(define (h x) (* x x))
+(define (monabs x) (if (> x 0) x (- x)))
+(define (care-div x y) (if (= y 0) (display "division imossible") (/ x y)))
+(define (signal t) (cond ((< t -3)  0)
+                         ((< t -1) 1)
+                         ((< t 2)  0)
+                         ((< t 4)  2)
+                         (else 0)))
+  
+(define (placement c t n) (* c (expt (+ 1 t) n)))
+(require (lib "turtles.ss" "graphics"))
+
+(define cotécarré ( lambda(lgr x) (if (not(= x 0)) (begin
+                                             (draw lgr)
+                                             (turn 90)
+                                             (cotécarré lgr (- x 1)))
+                              #f)))
+
+(define carré (lambda(lgr)  (turtles #t)
+                       (cotécarré lgr 4))
+                       )
+
+(define spirale (lambda(u f) (turtles #t)
+                    ( (not(= f u)) (begin
+                                             (draw u)
+                                             (turn 30)
+                                             (spirale (+ u 1) f)))))
+
+(define hexagone (lambda (n f) (turtles #t)
+                     
+                     ( if (not(= f 0)) (begin
+                                       (draw n)
+                                       (turn 60)
+                                       (hexagone n (- f 1))))))
+
+(define figure_rec (lambda (n f h) 
+                 ( if (not(= n 0)) (begin
+                                       (draw f)
+                                       (turn h)
+                                       (figure_rec (- n 1) f h)))))
+                  
+
+(define figure (lambda(n s) (turtles #t)
+                 (figure_rec n s (/ 360 n))))
+
+(define bissextil? (lambda(n) (if (or (and (= 0 modulo(n 4) (not(= modulo(n 100)))))

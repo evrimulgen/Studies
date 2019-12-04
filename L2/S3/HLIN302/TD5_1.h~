@@ -1,0 +1,20 @@
+#indef 
+
+
+Class TableauInt{
+ private:
+
+  unsigned int taille;
+
+ public :
+
+  unsigned int ind;
+
+  TableauInt(unsigned int);
+
+  int getTaille const();
+
+  void at(unsigned int);
+
+#endif  
+  

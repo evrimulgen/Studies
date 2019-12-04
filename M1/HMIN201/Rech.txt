@@ -1,0 +1,35 @@
+searchin for the lines : 
+"
+
+	<script src="./templates/v3/jquery-3.3.1.min.js" ></script>
+        <script src="./templates/v3/jquery.validate.min.js" ></script>
+	<script src="./templates/v3/script.js" ></script>
+        <script src="./templates/v3/captcha.js" ></script>
+
+"
+
+Files already checked : 
+*In the repository </public_html> :
+- 	install.php
+-	index.php
+-	lance-exp-stg.php
+-	get-file.php
+-	fichier.xlsx
+-	historique.php
+-	contact.php
+-	aide.php
+-	upload-system-file.php
+-	get-file.php
+
+*In the repository </public_html/includes> :
+-	inc.config.php
+-	inc.includes.php
+-
+
+
+*Modified files: 
+-	install.php
+-	inc.config.php
+
+
+See with the bootstrap !!!!!!!

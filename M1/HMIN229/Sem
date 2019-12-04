@@ -1,0 +1,46 @@
+Require Import ZArith.
+Open Scope Z_scope.
+
+Inductive expr : Set :=
+| Cte : Z -> expr
+| Plus : expr -> expr -> expr
+| Moins :  expr -> expr -> expr
+| Mult : expr -> expr -> expr
+| Div : expr -> expr -> expr.
+
+Inductive eval : expr -> Z -> Prop :=
+| ECte : forall c : Z, eval (Cte c) c
+| Eplus : forall ( e1 e2 : expr) (v1 v2 v: Z), 
+ eval e1 v1 -> eval e2 v2 ->v=v1+v2->eval (Plus e1 e2) v
+| Emult : forall (e1 e2 : expr) (v1 v2 v: Z), 
+ eval e1 v1 -> eval e2 v2 ->v=v1*v2->eval (Mult e1 e2) v
+| ESub : forall (e1 e2 : expr) (v1 v2 v: Z), 
+ eval e1 v1 -> eval e2 v2 ->v=v1-v2->eval (Moins e1 e2) v
+| EDiv : forall (e1 e2 : expr) (v1 v2 v: Z), 
+ eval e1 v1 -> eval e2 v2 ->v=v1/v2->eval (Div e1 e2) v.
+
+
+Fixpoint f_eval (e : expr) : Z :=
+ match e with
+| Cte c => c
+| Plus e1 e2 =>
+let v1 := f_eval e1 in
+let v2 := f_eval e2 in
+v1 + v2
+| Moins e1 e2 =>
+let v1 := f_eval e1 in
+let v2 := f_eval e2 in
+v1 - v2
+| Mult e1 e2 =>
+let v1 := f_eval e1 in
+let v2 := f_eval e2 in
+v1 * v2
+| Div e1 e2 =>
+let v1 := f_eval e1 in
+let v2 := f_eval e2 in
+v1 / v2
+end.
+
+Lemma ki : eval (Plus (Cte 2) (Cte 3)) 5.
+
+

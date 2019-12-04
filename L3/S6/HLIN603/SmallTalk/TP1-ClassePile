@@ -1,0 +1,65 @@
+------creation------
+Object subclass: #NameOfSubclass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'HLIN603'
+
+
+*****méthodes*****
+
+initialize: taille
+"la pile est vide quand index = 0"
+index := 0.
+"la pile est pleine quand index = capacite"
+capacite := taille.
+"le contenu est stocké dans un tableau"
+contenu := Array new: capacite.
+"pour les tests"
+"self assert: (self isEmpty)."
+
+
+***** ***** ***** *****
+isEmpty
+	
+	^index=0.
+
+***** ***** ***** *****
+isFull
+ ^index=capacite 
+
+***** ***** ***** *****
+pop
+	"dépile et rend le sommet de pile si la pile n'est pas vide"
+	
+	|retour|
+	self isEmpty 
+		ifFalse: [ 
+			retour := contenu at: index .
+			index := index -1.
+			^retour]
+		 ifTrue: [ self error:'Pile vide,impossible de dépiler']
+
+***** ***** ***** *****
+push: anObject
+	"met anObject dans le contenu au bn index si la pile n'est pas pliene"
+	
+	"pour faire du debugging ajouter ceci :"
+	self halt.
+	
+	self isFull 
+	ifFalse: [ "les tableaux commencent à l'index 1"
+		index := index +1.
+		contenu at:index put: anObject]
+	ifTrue: [ self error:'impossible empiler sur une pile pleine' ]
+
+
+***** ***** ***** *****
+grow 
+ |nb oldc|
+
+	nb:= self size.
+	oldc:= contenu.
+	capacite := capacite +2.
+	contenu := Array new:  capacite.
+	0 to: nb do:[:i | self push: (oldc at: i)]
+

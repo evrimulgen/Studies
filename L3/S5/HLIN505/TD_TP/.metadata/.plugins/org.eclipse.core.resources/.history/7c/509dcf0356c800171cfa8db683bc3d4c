@@ -1,0 +1,10 @@
+package td7;
+
+import java.util.Iterator;
+
+public class IterateurFS implements Iterator<FeuilleSalaire> {
+	
+	private FeuilleSalaire[] f;
+	private int i=0;
+
+}

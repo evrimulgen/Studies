@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1506076947783_3" label="td1" name="td1">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TD1" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1506077344073_4" label="new" name="new">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TD1" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1505722549102_0" label="Window Working Set" name="Aggregate for window 1505722549101"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1505741038189_1" label="Window Working Set" name="Aggregate for window 1505740969055"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1506075647792_2" label="Window Working Set" name="Aggregate for window 1506075647792"/>
+<mruList name="new"/>
+<mruList name="td1"/>
+</workingSetManager>

@@ -1,0 +1,28 @@
+(define LVal '(1 2 3 4 5 6 7 8 9 10 25 50 75 100))
+(define Op '(+ * - /))
+(define make-cible (lambda() (+ 100 (random 900))))
+(define make-tirage (lambda()
+                     (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14))
+                                                                                                                                                               (cons (list-ref LVal (random 14)) ()))))))))
+(define estdans? (lambda (x l) (cond ((null? l) #f)
+                                     ((= (car l) x) #t)
+                                     (else (estdans? x (cdr l)))
+                   )))
+
+(define estvalide? (lambda (x u v) ( if (and (> ((eval x) u v) 0) (integer? ((eval x) u v)) )   #t  #f) ) )
+(define Op '(+ * / -))
+(define (opere Op u v) (cons ((eval(list-ref Op 0)) u v)
+                             (cons ((eval(list-ref Op 1)) u v)
+                                   (cons (if (estvalide? (list-ref Op 2) u v) ((eval(list-ref Op 2)) u v) ((eval(list-ref Op 2)) v u))
+                                         (cons (if (estvalide? (list-ref Op 3) u v) ((eval(list-ref Op 3)) u v) ((eval(list-ref Op 3)) v u)) () )))))
+
+;(define (genere_plaque Op l)
+ ;        (letrec ((u  (car l))
+  ;                (v (car (cdr l)))
+   ;               (op (list-ref Op (random 3)))
+    ;              (l1 (list (opere Op u v))))))
+     ;      
+           
+                  
+                  
+

@@ -1,0 +1,15 @@
+;TERKI MOHAMED ADEL 21611143 GROUPE B
+
+;exercice 3:
+(define LVal '(1 2 3 4 5 6 7 8 9 10 25 50 75 100))
+(define make-tirage (lambda()
+                     (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) (cons (list-ref LVal (random 14)) 
+                                                                                                                         (cons (list-ref LVal (random 14)) ())))))))
+
+;exercice 4 :
+(define estdans? (lambda (x l) (cond ((null? l) #f)
+                                     ((= (car l) x) #t)
+                                     (else (estdans? x (cdr l)))
+                   )))
+
+;(estdans? 288 '(9 100 75 3 8))

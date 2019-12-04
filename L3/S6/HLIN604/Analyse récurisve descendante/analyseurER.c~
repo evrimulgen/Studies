@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+/* les macros sont des blocs : pas de ’;’ apres */
+#define AVANCER {jeton=getchar();numcar++;}
+#define TEST_AVANCE(prevu) {if (jeton==(prevu)) AVANCER else ERREUR_SYNTAXE}
+#define ERREUR_SYNTAXE {printf("\nMot non reconnu : erreur de syntaxe \
+au caractère numéro %d \n",numcar); exit(1);}
+
+void S(void);void X(void);void E(void);void R(void);void T(void);void Y(void);void F(void);

@@ -1,0 +1,30 @@
+########################################
+# définitions
+########################################
+
+# executables à générer
+
+BIN=client serveur
+
+# liste des fichiers sources 
+SRCS0=client.c
+SRCS1=serveur.c
+
+default: $(BIN)
+
+########################################
+# regles pour générer les executables
+########################################
+
+%.o: %.c
+	gcc -Wall -Iinclude -c $< -o $@
+
+client: $(SRCS0:%.c=%.o)
+	gcc -o $@ $+
+
+serveur: $(SRCS1:%.c=%.o)
+	gcc -o $@ $+
+
+clean:
+	rm -f $(BIN) *.o *~ emission/* reception/*
+	

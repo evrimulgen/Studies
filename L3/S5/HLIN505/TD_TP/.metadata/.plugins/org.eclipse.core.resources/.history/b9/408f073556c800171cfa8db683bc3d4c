@@ -1,0 +1,40 @@
+package td7;
+
+import java.awt.Color;
+import java.util.Iterator;
+
+public class IterateurFS implements Iterator<FeuilleSalaire> {
+	
+	private FeuilleSalaire[] f;
+	private int i=0;
+	
+	public IterateurFS(FeuilleSalaire[] f)
+	{
+		this.f=f;
+	}
+
+	
+	public boolean hasNext()
+	{
+		return true;
+	}
+
+	public FeuilleSalaire next()
+	{
+		if (i == 2)
+		{
+			i=0;
+		}
+		else
+		{
+			i++;
+		}
+		return f[i];
+	}
+	
+	
+	public void remove() throws UnsupportedOperationException
+	{
+		throw new UnsupportedOperationException();
+	}
+}

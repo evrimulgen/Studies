@@ -1,0 +1,11 @@
+#!/usr/bin/env python 3
+
+import os,sys,re
+
+
+des parcours (repertoire):
+            print ("je suis dans le repertoire ",repertoire)
+            liste = os.ilstdir(repertoire)
+            for fichier in liste :
+                if os.path.isdir(fichier):
+                    

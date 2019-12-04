@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 sept. 2017, 10:31:46
+    Author     : mterki
+*/
+.topic
+{
+	color : red;
+	top: 0 ;
+	right : 150px;
+	text-align: center;
+	border-bottom: black;
+	border-bottom-style: solid;
+	font-size: 30pt;
+	font-weight: bold;
+}
+
+.links
+{
+	position: absolute;
+	left:  0px;
+	list-style-type: none;
+	line-height: 2em;
+}
+
+.hardDrive>thead{
+	
+	font-weight: bold;
+	text-align: center;
+  
+}
+
+.hardDrive
+{ 
+	align-content: center;
+	position: relative;
+	table-layout: auto;
+
+
+}
+
+.keyboard>thead
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+.keyboard
+{
+	align-content: center;
+	position: relative;
+	table-layout: auto;
+
+	
+	
+}
+
+.others>thead
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+.others
+{
+	align-content: center;
+	position: relative;
+	table-layout: auto;
+	
+}
+
+body
+{
+	background-color: aquamarine;
+
+}
+
+footer
+{
+	color : red;
+	right : 150px;
+	text-align: center;
+	border-top:  black;
+	border-top-style: solid;
+	font-size: 30pt;
+	font-weight: bold;
+	
+}
+
+.content
+{
+	margin-left: 300px;
+	line-height: 2em;
+	
+  
+	
+}

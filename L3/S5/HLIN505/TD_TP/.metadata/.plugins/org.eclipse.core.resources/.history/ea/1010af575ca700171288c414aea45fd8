@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class main {
+	
+	public static <E extends Comparable<E>> E max(List<E> c)
+	{
+		if(c.isEmpty())
+			return null;
+		E max = c.get(0);
+		for(E e : c)
+			if(e.compareTo(max)>0)
+				max= e;
+		return max;
+	}
+	
+	public static<E> E max(List<E> c,Comparator<E> comp)
+	{
+		if(c.isEmpty())
+			return null;
+		E max = c.get(0);
+		for(E e : c)
+		if(comp.compare(e, max)>0)
+			max= e;
+		return max;
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Personne p1= new Personne("C",21);
+		Personne p2= new Personne("B",25);
+		Personne p3= new Personne("A",28);
+		
+		
+		
+		ArrayList<Personne> L = new ArrayList<Personne>();
+		L.add(p1);
+		L.add(p2);
+		L.add(p3);
+		
+		for (Personne p : L)
+			System.out.println(p.getNom());
+		
+		System.out.println("max normal = "+max(L).getNom());
+		System.out.println("max de Collections ="+Collections.max(L).getNom());
+		Collections.sort(L);
+		
+		System.out.println("liste triée");
+		for (Personne p : L)
+			System.out.println(p.getNom());
+		
+		
+		
+		
+			
+	
+	}
+
+}

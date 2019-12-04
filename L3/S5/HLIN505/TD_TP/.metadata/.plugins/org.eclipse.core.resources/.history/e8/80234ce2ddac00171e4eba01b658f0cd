@@ -1,0 +1,29 @@
+package tpTest.foobar;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+
+public class Mytest {
+	SUT sut;
+
+	@Before
+	public void setUp() throws Exception {
+		sut=new SUT();
+	}
+	
+	@Test
+	public void foobarTest(){
+		try
+		{
+		sut.foobar();
+		}
+		catch (FooBarException E)
+		{
+			System.out.println("catch dans le test de foobar \n");
+		}
+	}
+	
+}

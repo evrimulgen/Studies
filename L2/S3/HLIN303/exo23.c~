@@ -1,0 +1,15 @@
+#include<stido.h>
+#include<stlib.h>
+
+int main(int argc,char* argv[]){
+  int i=0;
+  if (argc !=2){prinf("saisiez le nom d votre fichier \n");}
+  
+  FILE* f=fopen(argv[1],"r");
+  char c=-1;
+  while (c != EOF){
+    c=fgetc(f);
+    i++;}
+
+  printf("%i \n",i);
+  return i; }

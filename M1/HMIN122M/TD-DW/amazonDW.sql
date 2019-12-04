@@ -1,0 +1,58 @@
+DROP TABLE SALES; 
+DROP TABLE PRODUCT;
+DROP TABLE USER;
+DROP TABLE TRANSACTION_NUMBER;
+DROP TABLE PROMOTION;
+
+
+CREATE TABLE SALES(
+	date DATE,
+	product NUMERIC(5),
+	user NUMERIC(5),
+	promotion NUMERIC(5);
+	unitPrice INT(5);
+	Qte INT(5);
+	transaction_number NUMERIC(5)
+);
+
+
+CREATE TABLE PRODUCT(
+	product_id NUMERIC(5),
+	product_price INT(5),
+	product_name VARCHAR(10),
+	product_ref NUMERIC(5),
+	CONSTRAINT PK_PRODUCT PRIMARY KEY (product_id)
+);
+
+
+
+
+CREATE TABLE USER(
+	user_id NUMERIC(5),
+	user_name VARCHAR(10),
+	e_mail VARCHAR(20),
+	phone VARCHAR(11),
+	CONSTRAINT PK_USER PRIMARY KEY (user_id)
+);
+
+
+
+
+CREATE TABLE TRANSACTION_NUMBER(
+	transaction_id NUMERIC(5),
+	CONSTRAINT PK_TRANSACTION_NUMBER PRIMARY KEY (transaction_id)
+);
+
+
+CREATE TABLE PROMOTION(
+	promotion_id NUMERIC(5),
+	name VARCHAR(10),
+	rate NUMERIC(5),
+	openningDate DATE,
+	endingDate DATE,
+	type VARCHAR,
+	CONSTRAINT PK_PROMOTION PRIMARY KEY (promotion_id)
+);
+
+ALTER TABLE SALES 
+	ADD CONSTRAINT FK_SALES_PRODUCT 

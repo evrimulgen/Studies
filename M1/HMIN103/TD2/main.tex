@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+
+\title{\textbf{Données du Web : XQuery - Partie 2}}
+\author{Emile YOUSSEF | Adel Mohamed TERKI}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\bigskip
+\section{XQuery : tweets}
+\medskip
+
+\bigskip
+\section{XQuery : Trains (suite)}
+\medskip
+
+\begin{enumerate}
+    \item for \$x in //train \par
+    \hspace{0.25cm}where /count(\$x//bar) = 1 \par
+    \hspace{0.5cm}return \$x/@numero 
+    \medskip
+    
+    \item for \$x in //usager \par
+    \hspace{0.25cm}for \$y in /gare \par
+    \hspace{0.5cm}where \$y//resa[@id = \$x/@id] \par
+    \hspace{0.75cm}return \$x/@nom
+    \medskip
+    
+    \item 
+    \medskip
+    
+    \item for \$x in //train \par
+    \hspace{0.25cm}where count(\$x//resa) > 1 \par
+    \hspace{0.5cm}return \$x/@numero
+    \medskip
+    
+    \item for \$x in //usager \par
+    \hspace{0.25cm}for \$y in /gare \par
+    \hspace{0.5cm}where count(\$y//resa[@id = \$x/@id]) = 2 \par
+    \hspace{0.75cm}return \$x/@nom
+    \medskip
+    
+    \item for \$x in //usager \par
+    \hspace{0.25cm}for \$y in /gare \par
+    \hspace{0.5cm}where not(\$y//resa[@id = \$x/@id]) \par
+    \hspace{0.75cm}return \$x \par
+    \medskip
+\end{enumerate}
+
+\bigskip
+\section{Propriétés des requêtes XPath et XQuery}
+\medskip
+
+\end{document}

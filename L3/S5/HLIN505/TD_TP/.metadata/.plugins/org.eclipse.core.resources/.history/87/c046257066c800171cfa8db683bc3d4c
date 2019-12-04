@@ -1,0 +1,40 @@
+package td7;
+
+import java.util.ArrayList;
+
+public class CollectionFeuillesSalaire {
+
+	private ArrayList<FeuilleSalaire> lfs;
+	
+	public CollectionFeuillesSalaire(ArrayList<FeuilleSalaire> lfs)
+	{
+		this.lfs= lfs;
+	}
+	
+	public void print()
+	{
+		 // lambda expression
+		 lfs.stream().forEach(e -> System.out.println(e.toString()));
+		
+	}
+	
+	public void tri()
+	{
+		for(int i=0;i< lfs.size();i++)
+		{
+			int min=0;
+			for(int j=i+1;j< lfs.size();j++)
+			{
+				if (lfs.get(min).getNbHeuresPayes() > lfs.get(j).getNbHeuresPayes()){
+					FeuilleSalaire x=lfs.get(min);
+					lfs.get(min).setNbHeuresPayes(lfs.get(j).getNbHeuresPayes());
+					lfs.get(j).setNbHeuresPayes(x);
+					min=j;
+				}
+			Double y = lfs.get(min).getNbHeuresPayes(); 	
+			lfs.get(0).setNbHeuresPayes(y);
+			}
+				
+		}
+	}
+}

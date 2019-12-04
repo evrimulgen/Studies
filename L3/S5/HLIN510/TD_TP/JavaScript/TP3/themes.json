@@ -1,0 +1,66 @@
+{
+	"restaurant": 
+	[
+		{	
+			"name": "L'oustal de St Jean",
+			"type": "restaurant",
+			"geometry": { "type": "Point", "coordinates": [ 3.845461752386913, 43.559394110648938 ] } 
+		},
+		{ 
+			"name": "La Cascade",
+			"type": "restaurant", 
+			"geometry": { "type": "Point", "coordinates": [ 3.984032091962876, 43.67780862402244 ] } 
+		},
+		{ 
+			"name": "La Pleine Lune",
+			"type": "restaurant", 
+			"geometry": { "type": "Point", "coordinates": [ 3.86696892853563, 43.607599430611245 ] } 
+		},
+		{ 
+			"name": "Le Chupinazo",
+			"type": "restaurant", 
+			"geometry": { "type": "Point", "coordinates": [ 3.876892214106577, 43.608045122230166 ] } 
+		}
+	],
+	"hopitaux" :
+	[
+		{ 
+			"name" : "Hôpital Gui de Chauliac",
+			"type": "hopital",
+			"geometry": { "type": "Point", "coordinates": [ 3.862730493104229, 43.630330276796649 ] } 
+		},
+		{ 
+			"name" : "CHU Montpellier",
+			"type": "hopital",
+			"geometry": { "type": "Point", "coordinates": [ 3.851445384659789, 43.631729774421395 ] } 
+		},
+		{ 
+			"name" : "Hôpital Lapeyronie",
+			"type": "hopital", 
+			"geometry": { "type": "Point", "coordinates": [ 3.851451561989399, 43.629834403402938 ] } 
+		},
+		{ 
+			"name" : "Centre Medico Dentaire",
+			"type": "hopital",
+			"geometry": { "type": "Point", "coordinates": [ 3.869634360195202, 43.627798376159276 ] } 
+		}
+	],
+	"terrainsSport" :
+	[
+		{	
+			"name" : "tennis",
+			"type": "sport",   
+			"geometry": { "type": "Point", "coordinates": [ 3.918105080397518, 43.573805851713246 ] } 
+		},
+		{	
+			"name" : "escalade",
+			"type": "sport", 
+			"geometry": { "type": "Point", "coordinates": [ 3.99108861961098, 43.683294690375064 ] } 
+		},
+		{	
+			"name" : "table_tennis",
+			"type": "sport",
+			"geometry": { "type": "Point", "coordinates": [ 3.865965048088971, 43.611548393917012 ] } 
+		}
+	]
+}

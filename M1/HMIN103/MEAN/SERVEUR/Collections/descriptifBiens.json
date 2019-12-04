@@ -1,0 +1,26 @@
+[
+	{
+		"idBien":"1",
+		"motClef":"maçonnerie"
+	},
+	{
+		"idBien":"2",
+		"motClef":"nettoyage"
+	},
+	{
+		"idBien":"3",
+		"motClef":"maçonnerie"
+	},
+	{
+		"idBien":"4",
+		"motClef":"maçonnerie"
+	},
+	{
+		"idBien":"5",
+		"motClef":"maçonnerie"
+	},
+	{
+		"idBien":"6",
+		"motClef":"electrique"
+	}
+]

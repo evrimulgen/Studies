@@ -1,0 +1,18 @@
+#ifndef __TABLEAUCELLULE__H
+#define __TABLEAUCELLULE_H
+
+Class TableauCellule{
+ private :
+  size_t n;
+  Cellule T[];
+
+  TableauCellule();
+  TableauCellule(size_t t);
+  TableauCellule Ajouter_cell(Cellule &c);
+  void read(std ::istream&);
+  void write(std :ostream&);
+
+}
+
+#endif
+  

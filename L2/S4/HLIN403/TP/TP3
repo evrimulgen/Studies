@@ -1,0 +1,102 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname TP3) (read-case-sensitive #t) (teachpacks ((lib "draw.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #t #t none #f ((lib "draw.rkt" "teachpack" "htdp")) #f)))
+#|(define make-domino (lambda (x y) (if (and (<= x 6) (<= y 6) (>= x 0) (>= y 0)) (list x y) (display "valeurs incorrectes"))))
+(define domino-pG (lambda(domino) (car domino)))
+(define domino-pD (lambda(domino) (cadr domino)))
+
+      
+
+(define jeu-vide ())
+(define make-jeu (lambda() jeu-vide))
+(define premier-dom-chaine (lambda(j) (car j)))
+(define suite-dom-chaine (lambda(j) (cdr j)))
+(define jeu-vide? (lambda (j) (null? j)))
+(define est_double? (lambda(domino)  (= (domino-pG domino) (domino-pD domino)) ))
+(define doubles (lambda(jeu)
+                  (cond ((null? jeu) ()) 
+                        ((est_double? (car jeu)) (cons (car jeu) (doubles (cdr jeu)) ))
+                        (else (doubles (cdr jeu)) ) ) ) )
+
+(define retourner (lambda (domino)
+                    (make-domino (domino-pD domino) (domino-pG domino))))
+
+(define peut-jouer? (lambda(jeu n)
+                         (cond ((jeu-vide? jeu) #f)
+                               ((or (= n (domino-pD (car jeu)) ) (= n (domino-pG (car jeu)) ) ) #t)
+                               (else (peut-jouer? (cdr jeu) n)))))
+
+(define extraire (lambda(n jeu)
+                   (cond ((jeu-vide? jeu) )
+                         ((or (= n (domino-pD (car jeu)) ) (= n (domino-pG (car jeu)) ) ) (car jeu))
+                               (else (extraire n (cdr jeu) )))))
+
+(define chaine-valide? (lambda(jeu)
+                            (if  (or (jeu-vide? jeu) (= 1 (length jeu)) ) #t
+                                  (and (= (domino-pD (premier-dom-chaine  jeu)) (domino-pG (car (suite-dom-chaine jeu)) ) ) (chaine-valide? (cdr jeu)) ) )))
+
+(define ext_g (lambda(jeu) (car (car jeu) )))
+(define ext_d (lambda(jeu) (cond ((null? jeu) )
+                                 ((null? (suite-dom-chaine jeu)) (domino-pD (premier-dom-chaine jeu) ) )
+                                 (else (ext_d (suite-dom-chaine jeu))))))
+
+;(define ext_d1 (lambda(jeu) (cdr (last jeu))))
+
+(define supprimer (lambda(j d) 
+                 (cond ((null? j) '() )
+                       ((not(equal? (car j) d)) (cons (car j) (supprimer (cdr j) d) ) )
+                       (else (cdr j)))))
+
+
+
+(define supprimer1 (lambda(j d) 
+                 (if (not (null? j) ) 
+                       (remove d j)
+                       )))
+
+
+
+(define ajouter (lambda(d j)
+                  (cond ((null? j) (cons d () ))
+                        ((equal? (ext_d j) (domino-pG d)) (append j (list d)))
+                        ((equal? (ext_d j) (domino-pD d)) (append j (list(retourner d))))
+                        ((equal? (ext_g j) (domino-pD d)) (cons d j))
+                        ((equal? (ext_g j) (domino-pG d)) (cons (retourner d) j))
+                        (else j)
+                        )))
+
+(define contient (lambda(d n)
+                   (or (= n (domino-pD d)) (= n (domino-pG d)) )))
+                        
+                      
+(define pose (lambda(j ch)
+               (cond ( (jeu-vide? j) )
+                     ( (or (contient (premier-dom-chaine j) (ext_d ch))
+                        (contient (premier-dom-chaine j) (ext_g ch))
+                        ) (ajouter (premier-dom-chaine j) ch)
+                          (supprimer (premier-dom-chaine j) j)
+                          ) 
+                  (else (pose (suite-dom-chaine j) ch) ))))
+
+
+                        
+; '( (5 0) (6 2) (1 3) (4 5) )       jeu
+;  '( (1 6) (6 3) (3 2) (2 5) (5 0) ) chaine               
+|#
+ (require htdp/draw)
+
+ (define (dessiner-gros-point x y)
+   ((start 342 256)
+    (draw-solid-disk (make-posn x y) 2)
+   ))
+
+(define (dessiner-rectangle a b c d)
+  ((start 342 256)
+   (draw-solid-line (make-posn a b)  (make-posn c b))
+   (draw-solid-line (make-posn c b) (make-posn c d))
+   (draw-solid-line (make-posn c d) (make-posn a d))
+   (draw-solid-line (make-posn a d) (make-posn a b))
+   ))
+   
+
+

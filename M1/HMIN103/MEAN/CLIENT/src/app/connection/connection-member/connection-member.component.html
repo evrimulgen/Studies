@@ -1,0 +1,15 @@
+<td  class="connection">
+  <h1>AUTHENTIFICATION</h1>
+  <form (ngSubmit)="logged()">
+    <div>e-mail</div>
+    <input id="mail" type="text" [(ngModel)]="login" name="mail" placeholder="e-mail"><br/>
+    <br/>
+    <div>mot de passe</div>
+    <input id="pass" type="text" [(ngModel)]="password" name="mdp" placeholder="mot de passe"><br/>
+    <br/>
+    <button type="submit">demander à mes voisins</button><br/>
+    <div *ngIf="!isCorrect">e-mail/mot de passe incorret(s)</div> 
+  </form>
+  <a [routerLink]="[{'outlets':{'application-outlet':['application']}}]">Je m'inscris</a>
+  <br/>
+</td>

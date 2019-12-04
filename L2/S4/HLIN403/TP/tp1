@@ -1,0 +1,14 @@
+;TERKI MOHAMED ADEL 21611143 GROUPE B
+
+(define (signal t) (cond ((< t -3)  0)
+                         ((< t -1) 1)
+                         ((< t 2)  0)
+                         ((< t 4)  2)
+                         (else 0)))
+;exercice 1 :
+;(map signal '(-5 -4 -3 -2 -1 0 1 2 3 4 5) )
+
+;exercice 2 :
+(define bissextil? (lambda(n) (or (and (equal? 0 (modulo n 4)) (not 
+(equal? 0 (modulo n 100))))) (equal? 0 (modulo n 400)) ))
+;1408 n'est pas une année bissextille

@@ -1,0 +1,25 @@
+#|la courbe ou flacon de Von Koch :
+Ai=(4/3)^i*A0
+Ai=(4/3)*Ai-1
+|# 
+
+(require graphics/turtles)
+
+(define (von_koch prof a) (if (equal? prof 0) a
+                               (* (/ 4.0 3.0) (von_koch (- prof 1) a))))
+
+(define (prepa-von-koch)
+  (turtles #t)
+  (turtles)
+  )
+
+
+(define c 20)
+(define (anim-von-koch n)
+  
+      ))
+  
+
+
+
+

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.table {
+    display: block;    
+    font-size: 0;
+}
+
+div.table > div {
+    display: block;
+}
+
+div.table > div > div {
+    position: relative;
+    font-size: 20px;
+    line-height: 50px;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 3px solid #AAACCC;
+    text-align: center;
+}
+
+div.table > div > div > a {
+    display:block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+     
+} 

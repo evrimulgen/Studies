@@ -1,0 +1,14 @@
+type form =
+  | Top | Bot | Var of form | Neg of form
+  | Et of form * form| Ou of form * form|Imp of form * form;;
+
+
+let print_form = function
+  | a -> print_string a
+  | Et(a,b) -> print_string (concat a "^" b)
+  | Ou(a,b) -> print_string (concat a "v" b)
+  | Imp(a,b) -> print_string (concat  a "->" b)
+  | Top -> print_string "true"
+  | Bot -> print_string "false"
+  | Neg(a) -> print_string (concat "!" a)
+  ;;

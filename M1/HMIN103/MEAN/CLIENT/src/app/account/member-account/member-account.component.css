@@ -1,0 +1,10 @@
+td{
+	font-family: "arial";
+	font-weight: bold;
+	color: #ff0066;
+	background-color: #4dff4d;
+	width:650px;
+	height: 200px;
+	border-style: solid;
+	border-radius:  25px;
+}

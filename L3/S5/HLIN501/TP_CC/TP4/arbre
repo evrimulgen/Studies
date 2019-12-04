@@ -1,0 +1,46 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 0 0 612 792
+
+106 279 3 0 360 arc
+0 setgray
+fill
+stroke
+
+152 46 3 0 360 arc
+0 setgray
+fill
+stroke
+
+153 423 3 0 360 arc
+0 setgray
+fill
+stroke
+
+463 665 3 0 360 arc
+0 setgray
+fill
+stroke
+
+449 539 3 0 360 arc
+0 setgray
+fill
+stroke
+
+
+106 279 moveto
+449 539 lineto
+stroke
+
+106 279 moveto
+463 665 lineto
+stroke
+
+152 46 moveto
+449 539 lineto
+stroke
+
+152 46 moveto
+463 665 lineto
+stroke
+
+showpage

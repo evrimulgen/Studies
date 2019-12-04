@@ -1,0 +1,22 @@
+digraph G { label = "Arbre Bin" 
+16915936 [label="8" ] ;
+16915936 -> 16915904 [color="red",label="g" ] ;
+16915904 [label="2" ] ;
+16915904 -> 16915872 [color="red",label="g" ] ;
+16915872 [label="4" ] ;
+16915904 -> 16915840 [color="blue",label="d" ] ;
+16915840 [label="9" ] ;
+16915840 -> 16915808 [color="blue",label="d" ] ;
+16915808 [label="1" ] ;
+16915808 -> 16915776 [color="blue",label="d" ] ;
+16915776 [label="7" ] ;
+16915776 -> 16915744 [color="red",label="g" ] ;
+16915744 [label="11" ] ;
+16915776 -> 16915712 [color="blue",label="d" ] ;
+16915712 [label="5" ] ;
+16915936 -> 16915680 [color="blue",label="d" ] ;
+16915680 [label="3" ] ;
+16915680 -> 16915648 [color="blue",label="d" ] ;
+16915648 [label="9" ] ;
+
+ }
